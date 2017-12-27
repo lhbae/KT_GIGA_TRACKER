@@ -1,0 +1,120 @@
+{
+  "m01000000" : { "name":"대쉬보드", "url":"m01000000.html", "target":"_self"},
+
+  "m02000000" : { "name":"모니터링", "url":"m02000000.html", "target":"_self"},
+
+  "m03000000" : { "name":"대상관리", "url":"#none", "target":"_self", "sub" : [
+    {"m03010000" : { "name":"대상현황", "url":"m03000000.html", "target":"_self", "sub" : [
+      {"m03010001" : { "name":"상세", "url":"m03000001.html", "target":"_self"}},
+      {"m03010002" : { "name":"수정", "url":"m03000002.html", "target":"_self"}},
+      {"m03010003" : { "name":"등록", "url":"m03000003.html", "target":"_self"}}
+    ]}},
+    {"m03020000" : { "name":"대상유형관리", "url":"m03020000.html", "target":"_self", "sub" : [
+      {"m03020001" : { "name":"상세", "url":"m03020001.html", "target":"_self"}},
+      {"m03020002" : { "name":"수정", "url":"m03020002.html", "target":"_self"}},
+      {"m03020003" : { "name":"등록", "url":"m03020003.html", "target":"_self"}}
+    ]}},
+    {"m03030000" : { "name":"매핑이력", "url":"m03030000.html", "target":"_self"}}
+  ]},
+
+  "m04000000" : { "name":"단말관리", "url":"#none", "target":"_self", "sub" : [
+    {"m04010000" : { "name":"단말현황", "url":"m04000000.html", "target":"_self", "sub" : [
+      {"m04010001" : { "name":"상세", "url":"m04000001.html", "target":"_self"}},
+      {"m04010002" : { "name":"수정", "url":"m04000002.html", "target":"_self"}},
+      {"m04010003" : { "name":"등록", "url":"m04000003.html", "target":"_self"}}
+    ]}},
+    {"m04020000" : { "name":"단말타입관리", "url":"m04020000.html", "target":"_self", "sub" : [
+      {"m04020001" : { "name":"상세", "url":"m04020001.html", "target":"_self"}},
+      {"m04020002" : { "name":"수정", "url":"m04020002.html", "target":"_self"}},
+      {"m04020003" : { "name":"등록", "url":"m04020003.html", "target":"_self"}}
+    ]}}
+  ]},
+
+  "m05000000" : { "name":"통계", "url":"#none", "target":"_self", "hidden" : true},
+
+  "m06000000" : { "name":"관리자", "url":"#none", "target":"_self", "sub" : [
+    {"m06010000" : { "name":"역할관리", "url":"m06000000.html", "target":"_self", "sub" : [
+      {"m06010001" : { "name":"상세", "url":"m06000001.html", "target":"_self"}},
+      {"m06010002" : { "name":"수정", "url":"m06000002.html", "target":"_self"}},
+      {"m06010003" : { "name":"등록", "url":"m06000003.html", "target":"_self"}}
+    ]}},
+    {"m06020000" : { "name":"메뉴관리", "url":"m06020000.html", "target":"_self", "sub" : [
+      {"m06020001" : { "name":"메뉴현황", "url":"m06020001.html", "target":"_self"}},
+      {"m06020002" : { "name":"메뉴현황 수정", "url":"m06020002.html", "target":"_self"}},
+      {"m06020003" : { "name":"메뉴현황 등록", "url":"m06020003.html", "target":"_self"}},
+      {"m06020004" : { "name":"역할별메뉴", "url":"m06020004.html", "target":"_self"}},
+      {"m06020005" : { "name":"역할별메뉴 설정", "url":"m06020005.html", "target":"_self"}}
+    ]}},
+    {"m06030000" : { "name":"코드관리", "url":"m06030000.html", "target":"_self", "sub" : [
+
+      {"m06030102" : { "name":"그룹코드 수정", "url":"m06030102.html", "target":"_self"}},
+      {"m06030103" : { "name":"그룹코드 등록", "url":"m06030103.html", "target":"_self"}},
+
+      {"m06030202" : { "name":"상세코드 수정", "url":"m06030202.html", "target":"_self"}},
+      {"m06030203" : { "name":"상세코드 등록", "url":"m06030203.html", "target":"_self"}}
+
+    ]}},
+    {"m06040000" : { "name":"프로그램관리", "url":"m06040000.html", "target":"_self", "sub" : [
+      {"m06040001" : { "name":"상세", "url":"m06040001.html", "target":"_self"}},
+      {"m06040002" : { "name":"수정", "url":"m06040002.html", "target":"_self"}},
+      {"m06040003" : { "name":"등록", "url":"m06040003.html", "target":"_self"}}
+    ]}},
+    {"m06050000" : { "name":"운영사관리", "url":"m06050000.html", "target":"_self", "sub" : [
+      {"m06050001" : { "name":"상세", "url":"m06050001.html", "target":"_self"}},
+      {"m06050002" : { "name":"수정", "url":"m06050002.html", "target":"_self"}},
+      {"m06050003" : { "name":"등록", "url":"m06050003.html", "target":"_self"}}
+    ]}},
+    {"m06060000" : { "name":"관리자관리", "url":"m06060000.html", "target":"_self", "sub" : [
+      {"m06060001" : { "name":"상세", "url":"m06060001.html", "target":"_self"}},
+      {"m06060002" : { "name":"수정", "url":"m06060002.html", "target":"_self"}},
+      {"m06060003" : { "name":"등록", "url":"m06060003.html", "target":"_self"}}
+    ]}},
+    {"m06070000" : { "name":"회사관리", "url":"m06070000.html", "target":"_self", "sub" : [
+      {"m06070001" : { "name":"상세", "url":"m06070001.html", "target":"_self"}},
+      {"m06070002" : { "name":"수정", "url":"m06070002.html", "target":"_self"}},
+      {"m06070003" : { "name":"등록", "url":"m06070003.html", "target":"_self"}}
+    ]}},
+    {"m06080000" : { "name":"그룹관리", "url":"m06080000.html", "target":"_self", "sub" : [
+      {"m06080001" : { "name":"상세", "url":"m06080001.html", "target":"_self"}},
+      {"m06080002" : { "name":"수정", "url":"m06080002.html", "target":"_self"}},
+      {"m06080003" : { "name":"등록", "url":"m06080003.html", "target":"_self"}}
+    ]}},
+    {"m06090000" : { "name":"사용자관리", "url":"m06090000.html", "target":"_self", "sub" : [
+      {"m06090001" : { "name":"상세", "url":"m06090001.html", "target":"_self"}},
+      {"m06090002" : { "name":"수정", "url":"m06090002.html", "target":"_self"}},
+      {"m06090003" : { "name":"등록", "url":"m06090003.html", "target":"_self"}}
+    ]}}
+  ]},
+
+  "m07000000" : { "name":"설정", "url":"#none", "target":"_self", "sub" : [
+    {"m07010000" : { "name":"지오펜스", "url":"m07000000.html", "target":"_self", "sub" : [
+      {"m07010001" : { "name":"상세", "url":"m07000001.html", "target":"_self"}},
+      {"m07010002" : { "name":"수정", "url":"m07000002.html", "target":"_self"}},
+      {"m07010003" : { "name":"등록", "url":"m07000003.html", "target":"_self"}}
+    ]}},
+    {"m07020000" : { "name":"알림기준치", "url":"m07020000.html", "target":"_self"}}
+  ]},
+
+  "m08000000" : { "name":"사용자 정보", "url":"m08000000.html", "target":"_self", "hidden" : true},
+
+  "m09000000" : { "name":"고객지원", "url":"#none", "target":"_self", "sub" : [
+    {"m09010000" : { "name":"공지사항", "url":"m09000000.html", "target":"_self", "sub" : [
+      {"m09010001" : { "name":"상세", "url":"m09000001.html", "target":"_self"}},
+      {"m09010002" : { "name":"수정", "url":"m09000002.html", "target":"_self"}},
+      {"m09010003" : { "name":"등록", "url":"m09000003.html", "target":"_self"}}
+    ]}},
+    {"m09020000" : { "name":"1:1문의", "url":"m09020000.html", "target":"_self", "sub" : [
+      {"m09020001" : { "name":"상세", "url":"m09020001.html", "target":"_self"}},
+      {"m09020002" : { "name":"수정", "url":"m09020002.html", "target":"_self"}},
+      {"m09020003" : { "name":"등록", "url":"m09020003.html", "target":"_self"}}
+    ]}},
+    {"m09030000" : { "name":"FAQ", "url":"m09030000.html", "target":"_self", "sub" : [
+      {"m09030001" : { "name":"상세", "url":"m09030001.html", "target":"_self"}},
+      {"m09030002" : { "name":"수정", "url":"m09030002.html", "target":"_self"}},
+      {"m09030003" : { "name":"등록", "url":"m09030003.html", "target":"_self"}}
+    ]}}
+  ]},
+
+  "m10000000" : { "name":"로그인", "url":"m10000000.html", "target":"_self", "hidden" : true},
+  "m11000000" : { "name":"404", "url":"m11000000.html", "target":"_self", "hidden" : true}
+}

@@ -1,0 +1,75 @@
+<div id="admin-select" class="dialog" title="관리자 선택">
+
+    <div class="table-header mt-0">
+        <div class="form-inline">
+            <select name="" id="" class="form-control">
+                <option value="">관리자ID</option>
+                <option value="">관리자명</option>
+            </select>
+
+            <div class="input-group">
+                <span class="input-group-addon ico-search"></span>
+                <input class="form-control" type="text" placeholder="">
+                <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+            </div>
+        </div>
+    </div>
+
+    <table id="admin-select-table"></table>
+</div>
+
+
+<script>
+
+    function adminSelectOpen() {
+
+        $('#admin-select').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 620,
+            height: 760,
+            dialogClass: 'admin-select',
+            open: function () {
+                $("#admin-select-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    height: 480,
+                    loadtext: '로딩중...',
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+                    scrollbar: true,
+//                    rowNum: 10,
+                    colNames: ["관리자ID", "관리자명", "계정등급", "연락처", "이메일", "관리대상수"],
+                    colModel: [
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+            },
+            buttons: {
+                "취소": {
+                    'class': 'btn btn-secondary',
+                    'text': '취소',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                "확인": {
+                    'class': 'btn btn-primary',
+                    'text': '확인',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            }
+        });
+    }
+</script>

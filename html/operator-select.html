@@ -1,0 +1,90 @@
+<div id="operator-select" class="dialog" title="운영사 선택">
+
+    <div class="table-header mt-0">
+        <div class="form-inline">
+            <select class="form-control" name="" id="">
+                <option value="">운영사명</option>
+                <option value="">운영사ID</option>
+            </select>
+            <div class="input-group">
+                <span class="input-group-addon ico-search"></span>
+                <input type="text" class="form-control" placeholder="">
+                <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+            </div>
+            <select class="form-control" name="" id="">
+                <option value="">계약상태</option>
+                <option value="">정상</option>
+                <option value="">만료</option>
+                <option value="">정지</option>
+            </select>
+        </div>
+    </div>
+
+    <table id="operator-select-table"></table>
+
+    <ul class="pagination">
+        <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+        <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+        <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+    </ul>
+
+</div>
+
+
+<script>
+    function operatorSelectOpen() {
+        $('#operator-select').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 700,
+            height: 810,
+            dialogClass: 'operator-select',
+            open: function () {
+                $("#operator-select-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    height: 480,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    loadtext: '로딩중...',
+//                    multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+//                    scrollerbar:true,
+                    rowNum: 10,
+                    colNames: ["순번","운영사명","운영사ID","대표자명","계약기간","계약상태"],
+                    colModel: [
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+            },
+            buttons: {
+                "취소": {
+                    'class': 'btn btn-secondary',
+                    'text': '취소',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                "선택": {
+                    'class': 'btn btn-primary',
+                    'text': '선택',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            }
+        });
+    }
+</script>

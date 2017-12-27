@@ -1,0 +1,84 @@
+<div id="program-search" class="dialog" title="프로그램 조회">
+
+    <div class="table-header justify-content-between">
+        <div class="form-inline">
+            <select class="form-control" name="" id="">
+                <option value="">프로그램명</option>
+            </select>
+
+            <div class="input-group">
+                <span class="input-group-addon ico-search"></span>
+                <input type="text" class="form-control" placeholder="">
+                <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+            </div>
+        </div>
+        <span class="counter">전체<span>25</span>개</span>
+    </div>
+
+    <table id="program-search-table"></table>
+
+    <ul class="pagination">
+        <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+        <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+        <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+    </ul>
+</div>
+
+
+<script>
+    function programSearchOpen() {
+        $('#program-search').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 700,
+            height: 810,
+            dialogClass: 'program-search',
+            open: function () {
+                $("#program-search-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    height: 480,
+                    loadtext: '로딩중...',
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+//                    scrollbar: 'true',
+                    rowNum: 10,
+                    colNames: ["순번","프로그램ID","프로그램명","프로그램영문명","경로"],
+                    colModel: [
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+
+            },
+            buttons: {
+                "취소": {
+                    'class': 'btn btn-secondary',
+                    'text': '취소',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                "선택": {
+                    'class': 'btn btn-primary',
+                    'text': '선택',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            }
+        });
+
+    }
+</script>

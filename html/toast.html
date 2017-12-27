@@ -1,0 +1,27 @@
+<div id="" class="dialog toast-dialog">
+    <div class="item" data-icon="GI" tabindex="0" onclick="goPage('m03000000.html')">
+        <dl>
+            <dt>지오펜스에 진입하였습니다.</dt>
+            <dd>대상 : 드라이컨테이너1번</dd>
+            <dd>17.07.02 16:30:00</dd>
+        </dl>
+    </div>
+</div>
+
+<script>
+    function toastOpen() {
+        $('.toast-dialog').each(function (i) {
+            var $this = $(this);
+            var t = 'right-25 top+' + (72 + i * 88);
+            $this.dialog({
+                position: {my: t, at: "right top", of: 'body'},
+                autoOpen: true,
+                show: {effect: 'drop', direction: 'right', duration: 200},
+                hide: {effect: 'drop', direction: 'right', duration: 200},
+                modal: false,
+                width: 300,
+                dialogClass: 'toast close-title'
+            });
+        });
+    }
+</script>

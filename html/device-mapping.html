@@ -1,0 +1,77 @@
+<div id="device-mapping" class="dialog" title="매핑단말 정보">
+
+    <h4>컨테이너1</h4>
+
+    <div class="table-header justify-content-between">
+        <div class="form-inline">
+            <select class="form-control" name="" id="">
+                <option value="">단말타입</option>
+            </select>
+        </div>
+        <span class="counter">전체<span>25</span>개</span>
+    </div>
+
+    <div class="scroll">
+        <table id="device-mapping-table"></table>
+    </div>
+    <!--<ul class="pagination">-->
+    <!--<li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>-->
+    <!--<li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>-->
+    <!--<li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+    <!--<li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>-->
+    <!--<li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>-->
+    <!--</ul>-->
+</div>
+
+
+<script>
+    function deviceMappingOpen() {
+        // 단말 모델명 클릭시 단말매핑수 팝업실행
+        $('#device-mapping').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 1000,
+            height: 720,
+            dialogClass: 'device-mapping',
+            open: function () {
+                $("#device-mapping-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    height: 480,
+                    loadtext: '로딩중...',
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+                    scrollbar: 'true',
+//                    rowNum: 10,
+                    colNames: ["순번", "단말 모델명", "단말IMEI", "단말타입", "펌웨어버전", "매핑상태", "매핑등록자", "최종매핑일시"],
+                    colModel: [
+                        {name: "", align: "center"},
+                        {
+                            name: "hndsetModelNm", align: "center", formatter: function (val) {
+                            return '<span title="센서:충격/온도/습도" class="tips">' + val + '</span>'
+
+                        }
+                        },
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+
+                setTimeout(function () {
+                    $('.tips').tooltip();
+                }, 100);
+            }
+        });
+
+    }
+</script>

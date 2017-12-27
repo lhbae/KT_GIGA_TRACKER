@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m03010000")</script>
+</head>
+<body>
+
+<div id="asset" class="wrap">
+    <div class="content">
+        <div class="content-inner">
+
+            <div class="content-header">
+                <h2>대상관리 > 목록</h2>
+                <div class="table-header">
+                    <div class="form-inline">
+                        <div class="input-group">
+                            <span class="input-group-addon ico-search"></span>
+                            <input class="form-control" type="text" placeholder="">
+                            <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+                        </div>
+
+                        <select class="form-control" name="" id="">
+                            <option value="">1차 유형</option>
+                        </select>
+
+                        <select class="form-control" name="" id="">
+                            <option value="">2차 유형</option>
+                        </select>
+
+                        <select class="form-control" name="" id="">
+                            <option value="">매핑상태</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-header justify-content-between">
+                <div class="left">
+                    <span class="counter">0/25</span>
+                    <button type="button" class="btn btn-del">삭제</button>
+                </div>
+                <div class="right">
+                    <button type="button" class="btn btn-primary" onclick="goPage('m03000003.html')">개별등록</button>
+                    <button type="button" class="btn btn-primary">일괄등록</button>
+                    <button type="button" class="btn btn-primary">목록 다운받기</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="table1"></table>
+            </div>
+
+            <ul class="pagination">
+                <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+                <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+                <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+            </ul>
+
+            <div class="ex">
+                <p>예시 ) 물류 / 컨테이너 유형의 상태에서 물류(1차유형)의 셀렉트 박스를 ‘1차유형’으로 선택하면 자동으로 2차유형의 셀렉트는 ‘컨테이너’에서 ‘2차유형’으로 변경되어 하단에 목록이 표시</p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+    toast();
+
+    // 대상관리 목록 테이블
+    function table1() {
+        $("#table1").jqGrid({
+            url: '../js/device.json',
+            datatype: "json",
+//            width: 100,
+            autowidth: true,
+            shrinkToFit: true,
+            height: 480,
+            loadtext: '로딩중...',
+            multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+            sortname: 'idx',
+            sortorder: "desc",
+            sortable: true,
+            rowNum: 10,
+            resizable: false,
+//            rownumbers: true,
+            colNames: ["대상명", "대상번호", "1차유형", "2차유형", "회사명", "소속그룹", "단말 모델명", "단말IMEI", "단말타입", "매핑상태", "최종매핑날짜", "단말매핑"],
+            colModel: [
+                {
+                    name: "hndsetModelNm", align: "center", formatter: function (val) {
+                    return '<a href="m03000001.html">' + val + '</a>'
+                }
+                },
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {
+                    name: "hndsetModelNm", align: "center", classes: 'asset-model', formatter: function (val) {
+                    var x = val == 'ATD-S100 XL';
+                    return x ? '<a href="#none" onclick="deviceMapping()">' + val + ' 외 2개</a>' : val;
+                }
+                },
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {name: "", align: "center"},
+                {
+                    name: "", align: "center", formatter: function () {
+                    return '<button type="button" class="btn btn-link" onclick="deviceSelect()">매핑</button>'
+                }
+                }
+            ]
+        });
+    }
+    table1();
+
+</script>
+</body>
+</html>

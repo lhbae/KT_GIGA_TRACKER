@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m04010002")</script>
+</head>
+<body>
+
+<div id="device" class="wrap">
+    <div class="content">
+        <div class="content-inner">
+
+            <div class="content-header">
+                <h2>단말관리</h2>
+            </div>
+
+            <div class="form-layout">
+                <h4>단말정보</h4>
+                <div class="form">
+                    <div class="row">
+                        <div class="col"><label for="" class="required">회사명</label><input type="text" class="form-control" required disabled></div>
+                        <div class="col"><label for="" class="required">소속그룹</label><input type="text" class="form-control" required disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="" class="required">단말 모델명</label><input type="text" class="form-control" required></div>
+                        <div class="col"><label for="" class="required">단말IMEI</label><input type="text" class="form-control" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="" class="required">단말타입</label><input onclick="deviceTypeSelect()" type="text" class="form-control" required></div>
+                        <div class="col"><label for="" class="required">펌웨어버전</label><input type="text" class="form-control" required></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="" class="required">단말상태</label><input type="text" class="form-control" required></div>
+                        <div class="col"><label for="" class="required">단말기능</label><input type="text" class="form-control" required disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="" class="required">데이터수집채널</label><input type="text" class="form-control" required></div>
+                        <div class="col"><label for="" class="required">단말제조사</label><input type="text" class="form-control" required disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="" class="required">단말제조일자</label><input type="text" class="form-control datepicker" required></div>
+                        <div class="col"><label for="">단말등록일시</label><input type="text" class="form-control" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="">개통일시</label><input type="text" class="form-control" disabled></div>
+                        <div class="col"><label for="">개통철회일시</label><input type="text" class="form-control" disabled></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-layout">
+                <h4>매핑대상정보</h4>
+                <div class="form">
+                    <div class="row">
+                        <div class="col"><label for="">대상명</label><input type="search" class="form-control" disabled></div>
+                        <div class="col"><label for="">대상번호</label><input type="search" class="form-control" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="">회사명</label><input type="search" class="form-control" disabled></div>
+                        <div class="col"><label for="">소속그룹</label><input type="search" class="form-control" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="">관리자명</label><input type="search" class="form-control" disabled></div>
+                        <div class="col"><label for="">관리자 연락처</label><input type="search" class="form-control" disabled></div>
+                    </div>
+                    <div class="row">
+                        <div class="col"><label for="">최종 매핑일시</label><input type="search" class="form-control" disabled></div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button type="button" class="btn btn-secondary" onclick="goPage('m04000000.html')">취소</button>
+                <button type="button" class="btn btn-primary" onclick="goPage('m04000000.html')">저장</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

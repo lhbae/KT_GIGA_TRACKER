@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #efefef;
+        }
+        .tooltip {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            position: relative;
+            bottom: 38px;
+        }
+        .tooltip:after {
+            content: '';
+            border: 6px solid transparent;
+            border-top-color:#fff;
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            margin-left: -6px;
+        }
+        .point {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #f00;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="point" style="left: 100px; top: 100px;">
+    <div class="tooltip">12</div>
+</div>
+
+<div class="point" style="left: 200px; top: 200px;">
+    <div class="tooltip">12345</div>
+</div>
+
+<div class="point" style="left: 300px; top: 300px;">
+    <div class="tooltip">1234567890</div>
+</div>
+</body>
+</html>

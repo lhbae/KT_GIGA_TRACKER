@@ -1,0 +1,112 @@
+<div id="asset-select" class="dialog" title="대상 선택">
+
+    <div class="table-header mt-0">
+        <div class="form-inline">
+            <div class="input-group">
+                <span class="input-group-addon ico-search"></span>
+                <input type="text" class="form-control" placeholder="대상명, 대상번호">
+                <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+            </div>
+
+            <input type="text" class="form-control" onclick="selectOrganization('group')" placeholder="그룹선택">
+            <!--<select class="form-control" name="" id="" onclick="selectOrganization('group')">-->
+                <!--<option value="">그룹선택</option>-->
+            <!--</select>-->
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="table-header justify-content-between">
+        <div class="left">
+            <input type="checkbox" id="table-select-check">
+            <label for="table-select-check" class="counter">10/25</label>
+        </div>
+        <div class="right">
+            <button type="button" class="btn btn-primary">전체보기</button>
+            <button type="button" class="btn btn-primary">선택대상보기</button>
+        </div>
+    </div>
+
+
+    <table id="asset-select-table"></table>
+
+    <ul class="pagination">
+        <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+        <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+        <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+    </ul>
+
+</div>
+
+
+<script>
+    function assetSelectOpen() {
+        // 단말 모델명 클릭시 단말매핑수 팝업실행
+        $('#asset-select').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 1000,
+            height: 900,
+            dialogClass: 'asset-select',
+            open: function () {
+                $("#asset-select-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    height: 480,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    loadtext: '로딩중...',
+                    multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+//                    scrollerbar:true,
+                    rowNum: 10,
+                    colNames: ["대상명", "대상번호", "1차유형", "2차유형", "회사명", "소속그룹", "단말 모델명", "단말IMEI", "단말타입"],
+                    colModel: [
+                        {
+                            name: "hndsetModelNm", align: "center", formatter: function (val) {
+                            return '<a href="m03000001.html">' + val + '</a>'
+                        }
+                        },
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {
+                            name: "hndsetModelNm", align: "center", classes: 'asset-model', formatter: function (val) {
+                            var x = val == 'ATD-S100 XL';
+                            return x ? '<a href="#none" onclick="deviceMapping()">' + val + ' 외 2개</a>' : val;
+                        }
+                        },
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+            },
+            buttons: {
+                "취소": {
+                    'class': 'btn btn-secondary',
+                    'text': '취소',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                "설정": {
+                    'class': 'btn btn-primary',
+                    'text': '설정',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            }
+        });
+    }
+</script>

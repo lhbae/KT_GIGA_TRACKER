@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m10000000")</script>
+</head>
+<body class="no-frame">
+
+<div id="login" class="wrap">
+
+    <div class="container">
+        <div class="login-copy">
+            <span class="sr-only">GiGA IoT Tracking service, Welcome!, Today will be great.</span>
+        </div>
+
+        <div class="login-form">
+            <label for="">ID</label>
+            <input type="text" class="form-control form-id" placeholder="">
+            <label for="">PASSWORD</label>
+            <input type="password" class="form-control form-password" placeholder="">
+            <a class="find-password-link" href="#none">비밀번호를 잊어버렸나요?</a>
+            <label for="">OTP</label>
+            <input type="password" class="form-control form-otp" placeholder="" data-valid="1">
+            <!-- data-valid : 값이 유효한 경우 체크표시 -->
+            <button type="button" class="btn btn-primary btn-block" onclick="goPage('m02000000.html')">로그인</button>
+            <a href="#none" class="btn btn-link" onclick="clauses()">Terms of Service and Disclaimer ＞</a>
+        </div>
+
+        <address>
+            <p>Copyright ⓒ 2017 GiGA IoT Tracking service. All Rights Reserved.</p>
+        </address>
+
+    </div>
+</div>
+
+<script>
+    formValidCheck();
+</script>
+</body>
+</html>

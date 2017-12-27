@@ -1,0 +1,22 @@
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    flex: 0 1 auto;
+  }
+  .body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  .footer {
+    width: 100%;
+    @include btns;
+    display: flex;
+    flex: 1 0 auto;
+    align-items: flex-end;
+    justify-content: center;
+    padding-top: 0;
+  }
+}
