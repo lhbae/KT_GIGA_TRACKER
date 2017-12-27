@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <style>
+        #guide {
+            padding: 0;
+            background: #fff;
+        }
+        #guide h1 {
+            position: fixed;
+            width: 100%;
+            z-index: 10;
+            background-color: #fff;
+            padding: 1rem 2rem;
+            font-size: 3rem;
+        }
+        #guide h2 {
+            margin: 2rem 0;
+            font-weight: 700;
+        }
+        #guide h3 {
+            margin: 20px 0;
+        }
+        #guide > .tabs .ui-tabs-nav {
+            position: fixed;
+            width: 100%;
+            top: 50px;
+            z-index: 10;
+            background-color: #fff;
+        }
+        #guide > .tabs .ui-tabs-panel {
+            padding: 20px !important;
+            position: relative;
+            top: 100px;
+        }
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 100%;
+        }
+        legend {
+            width: auto;
+        }
+        .depth1 {
+            display: flex;
+        }
+        .depth1 > li {
+            padding-right: 40px;
+        }
+        .depth1 li {
+            line-height: 1.6;
+        }
+        iframe {
+            width: 100%;
+            height: 100vh;
+        }
+        #guide .item {
+            position: relative;
+            width: 1600px;
+        }
+        #guide .item a {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #f00;
+            color: #fff;
+            display: inline-block;
+            padding: 4px;
+        }
+        ol li {
+            line-height: 2;
+        }
+    </style>
+</head>
+<body id="guide">
+
+<h1>KT GiGA IoT Tracking Service Guide</h1>
+
+<div class="tabs tabs-primary">
+    <ul>
+        <li><a href="#tabs-0">Update</a></li>
+        <li><a href="#tabs-1">IA</a></li>
+        <li><a href="#tabs-2">INPUT&BUTTON</a></li>
+        <li><a href="#tabs-3">Popup</a></li>
+        <li><a href="#tabs-4">Layout</a></li>
+        <li><a href="page0.html">로그인, 대시보드, 모니터링</a></li>
+        <li><a href="page1.html">대상관리</a></li>
+        <li><a href="page2.html">단말관리</a></li>
+        <li><a href="page3.html">설정</a></li>
+        <li><a href="page4.html">관리자</a></li>
+        <li><a href="page5.html">고객지원</a></li>
+    </ul>
+    <div id="tabs-0">
+        <ol>
+            <li>2017-12-07
+                <ul>
+                    <li>/css/ui.css - 관리자 > 메뉴관리-메뉴현황,그룹관리 : 수평조절 <br>
+                        /js/dashboard.js - 대시보드 배터리 현황 수정 <br>
+                        /js/dashboard_general.js - 대시보드 : 배터리 현황 수정 <br>
+                        /js/ui.js - 관리자 > 메뉴관리-역할별 메뉴 : 테이블 크기 조절
+                    </li>
+                </ul>
+            </li>
+            <li>2017-11-30
+                <ul>
+                    <li>대시보드 툴팁 추가 및 셀렉트박스, 가로스크롤 추가 변경 등 <br>
+                        /css/ui.css <br>
+                        /html/m01000000.html - 대시보드 수정 <br>
+                        /html/m01000000_general.html - 대시보드 수정 <br>
+                        /js/dashboard_general.js - 대시보드 수정 <br>
+                        /img/if_help-questionmark_430101_line.png - 이미지 추가
+                    </li>
+                </ul>
+            </li>
+            <li>2017-11-22
+                <ul>
+                    <li>
+                        /css/ui.css
+                        /html/m06020004.html - 버튼 위치 변경 <br>
+                        /html/m06030000.html - 버튼 위치 변경 <br>
+                        /html/m06080000.html - 버튼 위치 변경 <br>
+                        /html/m10000000.html - 로그인 폼 변경 <br>
+                        /js/common.js - 비밀번호 변경 문구 수정
+                    </li>
+                </ul>
+            </li>
+            <li>2017-11-21
+                <ul>
+                    <li>에러페이지 이미지 및 css 수정 <br>
+                        /img/error_404.png <br>
+                        /css/ui.css
+                    </li>
+                </ul>
+            </li>
+            <li>2017-11-20
+                <ul>
+                    <li>/css/ui.css <br>
+                        /html/m01000000.html - 텍스트 수정 <br>
+                        /html/m02000001.html - 모니터링 상세보기 우측 버튼을 셀렉트박스로 변경 <br>
+                        /html/m11000000.html - 에러페이지 추가 <br>
+                        /html/marker.html - 텍스트 수정 <br>
+                        이미지 추가 <br>
+                        /img/AL_B.png <br>
+                        /img/error_404.png <br>
+                        /img/ET_B.png <br>
+                        /img/ET_S_B.png <br>
+                        /img/ico_select_primary.png <br>
+                        /img/ico_select_primary_up.png <br>
+                        이미지 수정 <br>
+                        /img/login_copy.png <br>
+                        /img/logo.png <br>
+                        /js/common.js <br>
+                        /js/menu.json
+                    </li>
+                </ul>
+            </li>
+            <li>2017-11-14
+                <ul>
+                    <li>1. 대쉬보드 : 최근 업데이트 시간 우측에 '새로 고침 시간 select box' 추가</li>
+                    <li>2. 대쉬보드 : 최근 지오펜스 IN/OUT 대상 내 '가로 Scroll' 추가</li>
+                    <li>3. 모든 리스트 화면 내 특정 check box 제거 (PPT 참고)</li>
+                    <li>
+                        1,2번 <br>
+                        - /html/m01000000.html<br>
+                        - /html/m01000000_general.html​<br>
+                        - /js/vendor/jquery.slimscroll.js<br>
+                        - /js/common.js<br>
+                        - /img/ico_refresh2.png<br>
+                        3번<br>
+                        - /css/ui.css<br>
+                        - /html/m03000000.html<br>​
+                        - /html/m06000000.html<br>​
+                        - /html/m06020005.html<br>​
+                        - /html/m07000000.html<br>​
+                        - /html/m07020000.html<br>​
+                        - /html/m04000000.html<br>​
+                        - /html/m04020000.html<br>​
+                        - /html/m06040000.html<br>​
+                        - /html/m06050000.html<br>​
+                        - /html/m06060000.html<br>​
+                        - /html/m06070000.html<br>​
+                        - /html/m06090000.html​​​​​
+                    </li>
+                </ul>
+            </li>
+            <li>2017-10-31
+                <ul>
+                    <li>대시보드 새 버전 1차 완료 - 디자인 일부 완료, 기획 컨펌중</li>
+                </ul>
+            </li>
+            <li>2017-10-25
+                <ul>
+                    <li>고객지원 페이지 추가</li>
+                </ul>
+            </li>
+            <li>2017-10-23
+                <ul>
+                    <li>style.css 변경</li>
+                    <li>sidebar 로그아웃 메뉴추가 : common.js</li>
+                    <li>고객지원 메뉴 추가 : menu.json, ui.js, m09000000.html~m09030001.html</li>
+                    <li>알람팝업 탭제거, 스크롤 처리 : alarm.html</li>
+                    <li>모니터링 필터 : 라디오 > 체크박스 : m02000000.html</li>
+                </ul>
+            </li>
+            <li>2017-10-19 : ie11 checkbox 디자인 반영, sidebar id 클릭시 사용자 정보 링크 등
+                <ul>
+                    <li>style.css 변경</li>
+                    <li>menu.json : 고객지원을 사용자 정보로 텍스트 변경</li>
+                    <li>common.js : ie11Checkbox() 함수추가, id 클릭시 a링크 추가, 모니터링에서 사이드바 스크롤 문제 처리</li>
+                    <li>전페이지 : jqgrid 안 multiselect 사용시 변경 : multiselect: true, multiselectWidth: 50, to multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},</li>
+                    <li>이미지변경 - 총4개 (marker_type1~3.png, marker_in.png) 지도에서 마커 아이콘 변경 : 현업요청 - 테스트중</li>
+                    <li>organization-select.html : dialog top set : position: {my: "center top+100", at: "center top"},</li>
+                </ul>
+            </li>
+            <li>2017-10-18 : 현업요구사항 반영 : <a class="btn btn-link" href="https://docs.google.com/presentation/d/1ShTDi3JTAzdpjM_1xNpM2IRwXSXJjEUAGVKSG11uYKI/edit?usp=sharing" target="_blank">https://docs.google.com/presentation/d/1ShTDi3JTAzdpjM_1xNpM2IRwXSXJjEUAGVKSG11uYKI/edit?usp=sharing</a>
+                <ul>
+                    <li>style.css 변경</li>
+                    <li>m10000000.html / 로그인 : 이미지 변경(login_copy.png, login_bg.png) 및 html 변경</li>
+                    <li>m02000000.html / 모니터링 : &lt;div class=&quot;end&quot;&gt; to &lt;div class=&quot;end btn-group&quot; role=&quot;group&quot;&gt;</li>
+                    <li>m06040001~3.html / 관리자>프로그램관리 : 1컬럼 >> 2컬럼</li>
+                    <li>m06080000.html / 관리자>그룹관리 : 버튼 크기 및 간격이 수정되면서 클래스 추가됨 : &lt;div class=&quot;footer&quot;&gt; to &lt;div class=&quot;footer justify-content-between&quot;&gt;</li>
+                    <li>전페이지 : 데이터피커 입력시 x버튼 나오는 현상 : &lt;input type="search" class="datepicker form-control"&gt; to &lt; input type="text" class="datepicker form-control"&gt;</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <div id="tabs-4">
+        <fieldset>
+            <legend>html:5</legend>
+            <fieldset>
+                <legend>head</legend>
+                &lt;meta charset=&quot;UTF-8&quot;&gt; <br>
+                &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt; <br>
+                &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt; <br>
+                &lt;title&gt;Document&lt;/title&gt; <br>
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;../css/ui.css&quot;&gt; // bootstrap, jqgrid, jquery-ui, font-awesome, odometer, 페이지 전체 스타일링 <br>
+                &lt;script src=&quot;../js/vendor/jquery.js&quot;&gt;&lt;/script&gt; <br>
+                &lt;script src=&quot;../js/vendor/jquery-ui.js&quot;&gt;&lt;/script&gt; // dialog, accordion, datepicker, tabs, tooltip <br>
+                &lt;script src=&quot;../js/vendor/jquery.jqGrid.min.js&quot;&gt;&lt;/script&gt; // jqgrid, table, tree <br>
+                &lt;script src=&quot;../js/vendor/grid.locale-kr.js&quot;&gt;&lt;/script&gt; //jqgrid 한글화 <br>
+                &lt;script src=&quot;../js/vendor.js&quot;&gt;&lt;/script&gt; // jquery.easing.1.3.js, odometer.js, bootstrap util.js, bootstrap carousel.js, Modernizr.js, 애니메이션 및 스크롤 관련 라이브러리 모음 <br>
+                &lt;script src=&quot;../js/ui.js&quot;&gt;&lt;/script&gt; // 메뉴 관련 스크립트, #sidebar와 .header 생성, 메뉴활성화 <br>
+                &lt;script src=&quot;../js/common.js&quot;&gt;&lt;/script&gt; // 공통 스크립트, 팝업 및 차트관련 스트립트, 페이지 전체 컨트롤
+                &lt;script src=&quot;../js/dashboard.js&quot;&gt;&lt;/script&gt; // 대쉬보드 전용 스크립트
+            </fieldset>
+            <fieldset>
+                <legend>body</legend>
+                <div class="row">
+                    <div class="col-2 d-flex">
+                        <fieldset>
+                            <legend>#sidebar</legend>
+                            <fieldset>
+                                <legend>.btn-menu</legend>
+                            </fieldset>
+                            <fieldset>
+                                <legend>.account</legend>
+                            </fieldset>
+                            <fieldset>
+                                <legend>.scroll</legend>
+                            </fieldset>
+                            <fieldset>
+                                <legend>.copyright</legend>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                    <div class="col-10">
+                        <fieldset>
+                            <legend>.wrap#dashboard||#monitoring||#asset||#device||#admin||#setting||#login</legend>
+                            <fieldset>
+                                <legend>#header</legend>
+                            </fieldset>
+                            <fieldset>
+                                <legend>.content</legend>
+                                <fieldset>
+                                    <legend class="text-primary">.content-inner</legend>
+                                    <fieldset>
+                                        <legend class="text-primary">.content-header</legend>
+                                        &lt;h2&gt;title&lt;/h2&gt;
+                                        &lt;div class=&quot;table-header&quot;&gt;&lt;/div&gt;
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>주요컨텐츠</legend>
+                                        <fieldset>
+                                            <legend><span class="text-primary">.table-contaner</span>(scroll 없는 기본), .scroll, .tree, <span class="text-primary">[.table-colspan(th가 한줄이상인 경우 border처리)]</span></legend>
+                                            &lt;table id=&quot;&quot;&gt;&lt;/table&gt;
+                                            <div class="text-primary">
+                                                height: 480, <br>
+                                                multiselectWidth: 50, // checkbox 있는 경우 <br>
+
+                                                jqgrid 내부 버튼 클래스 교체 : .btn-secondary >> .btn-link
+                                            </div>
+                                        </fieldset>
+                                    </fieldset>
+                                    <fieldset>
+                                        <legend>.footer</legend>
+                                    </fieldset>
+                                </fieldset>
+                            </fieldset>
+                        </fieldset>
+                    </div>
+                </div>
+            </fieldset>
+        </fieldset>
+    </div>
+    <div id="tabs-1">
+        <div id="ia"></div>
+    </div>
+    <div id="tabs-2">
+        <h2>input</h2>
+        <div class="row form-inline no-gutters">
+            <input class="form-control" type="text" placeholder="text">
+            <input class="form-control" type="text" placeholder="text" disabled>
+            <input class="form-control" type="search" placeholder="search">
+            <input class="form-control" type="password" placeholder="password">
+            <input class="form-control" type="number" placeholder="number">
+        </div>
+        <div class="row form-inline no-gutters">
+            <select name="" id="" class="form-control">
+                <option value="">option1</option>
+            </select>
+        </div>
+        <div class="row form-inline no-gutters">
+            <input type="radio" name="radio-1" checked>
+            <input type="radio" name="radio-1">
+            <input type="checkbox" name="checkbox-1" checked>
+            <input type="checkbox" name="checkbox-1">
+            <input class="check-interest" type="checkbox">
+            <input class="check-interest" type="checkbox" checked>
+        </div>
+
+
+        <h2>button.btn</h2>
+        <button type="button" class="btn">.btn <i class="ui-icon ui-icon-caret-1-e"></i></button>
+        <button type="button" class="btn btn-primary">.btn.btn-primary</button>
+        <button type="button" class="btn btn-secondary">.btn.btn-secondary</button>
+        <button type="button" class="btn btn-link">.btn.btn-link</button>
+        <h2>a.btn</h2>
+        <a href="#none" class="btn">.btn</a>
+        <a href="#none" class="btn btn-primary">.btn.btn-primary</a>
+        <a href="#none" class="btn btn-secondary">.btn.btn-secondary</a>
+        <a href="#none" class="btn btn-link">.btn.btn-link</a>
+    </div>
+    <div id="tabs-3">
+        <h3>기본 메세지 팝업</h3>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('regist')">등록확인</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('modify')">수정확인</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('config')">설정확인</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('del')">삭제확인</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('save')">저장확인</button>
+
+        <h3>title 없는 메세지 팝업</h3>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('required')">필수입력사항 null</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('available')">입력값 사용가능</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('overlap')">입력값 중복</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('assetNull')">대상유형 미등록</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('assetOverlap')">대상번호 중복</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('doNotDel')">삭제불가</button>
+
+        <h3>파일등록 & 비밀번호</h3>
+
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('file')">파일등록</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('password')">비밀번호 확인</button>
+        <button type="button" class="btn btn-secondary" onclick="checkPopup('passwordChange')">비밀번호 변경</button>
+
+        <h3>회사&그룹찾기</h3>
+
+        <button type="button" class="btn btn-secondary" onclick="selectOrganization()">회사&그룹 선택</button>
+        <button type="button" class="btn btn-secondary" onclick="selectOrganization('company')">회사 선택</button>
+        <button type="button" class="btn btn-secondary" onclick="selectOrganization('group')">그룹 선택</button>
+
+        <h3>기타</h3>
+        <button type="button" class="btn btn-secondary" onclick="marker()">마커</button>
+        <button type="button" class="btn btn-secondary" onclick="alarm()">알람</button>
+        <button type="button" class="btn btn-secondary" onclick="toast()">토스트</button>
+        <button type="button" class="btn btn-secondary" onclick="viewContact()">연락처</button>
+
+        <hr>
+
+        <button type="button" class="btn btn-secondary" onclick="adminSelect()">관리자선택</button>
+        <button type="button" class="btn btn-secondary" onclick="findAddress()">주소검색</button>
+        <button type="button" class="btn btn-secondary" onclick="clauses()">약관보기</button>
+
+        <hr>
+
+        <button type="button" class="btn btn-secondary" onclick="deviceSelect()">매핑가능 단말선택</button>
+        <button type="button" class="btn btn-secondary" onclick="deviceMapping()">매핑단말 정보</button>
+        <button type="button" class="btn btn-secondary" onclick="assetSelect()">대상 - 대상선택</button>
+        <button type="button" class="btn btn-secondary" onclick="deviceTypeSelect()">단말타입선택</button>
+
+        <hr>
+
+        <button type="button" class="btn btn-secondary" onclick="operatorSelect()">운영사선택</button>
+        <button type="button" class="btn btn-secondary" onclick="roleSelect()">역할선택</button>
+        <button type="button" class="btn btn-secondary" onclick="topcodeSelect()">상위코드선택</button>
+        <button type="button" class="btn btn-secondary" onclick="topmenuSearch()">상위메뉴조회</button>
+        <button type="button" class="btn btn-secondary" onclick="programSearch()">프로그램조회</button>
+
+    </div>
+</div>
+
+<script>
+
+    function urlSet() {
+        $('.item').each(function () {
+            var url = $(this).find('iframe').attr('src');
+            $(this).append('<a href="' + url + '" target="_blank">' + url.split('html/')[1] + '</a>');
+        });
+    }
+
+    $('.tabs').tabs({
+        active: 2
+    });
+
+    $('#tabs-3 .btn').each(function () {
+        var $this = $(this);
+        $this.text($this.text() + ' : ' + $this.attr('onclick'));
+    });
+
+    var ui = function () {
+        $.ajax({
+            dataType: 'json',
+            url: '../js/menu.json'
+        }).done(function (data) {
+            var items = [];
+            items.push("<ul class='depth1'>");
+
+            $.each(data, function (key, val) {
+                items.push('<li><a href="../html/' + val.url + '">' + val.name + ' / ' + val.url + '</a>');
+                if (val.sub) {
+                    items.push('<ul class="depth2">');
+                    $.each(val.sub, function (i, data) {
+                        $.each(data, function (key, val) {
+                            items.push('<li><a href="../html/' + val.url + '">' + val.name + ' / ' + val.url + '</a>');
+                            if (val.sub) {
+                                items.push('<ul class="depth3">');
+                                $.each(val.sub, function (i, data) {
+                                    $.each(data, function (key, val) {
+                                        items.push('<li><a href="../html/' + val.url + '">' + val.name + ' / ' + val.url + '</a></li>');
+                                    });
+                                });
+                                items.push('</ul>');
+                            }
+                            items.push('</li>');
+                        });
+                    });
+                    items.push('</ul>');
+                }
+                items.push('</li>');
+            });
+
+            items.push("</ul>");
+
+            var menuHtml = items.join('');
+            $('#ia').append(menuHtml);
+        });
+    }();
+</script>
+</body>
+</html>

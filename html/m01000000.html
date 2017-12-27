@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script>ui.menuSet("m01000000")</script>
+</head>
+<body class="no-sidebar">
+
+<div id="dashboard" class="wrap biz">
+    <div class="content">
+        <div class="row-1">
+            <div class="greeting-area">
+                <h3>안녕하세요! 운영자님</h3>
+                <p>최근 업데이트 <span>2017.08.08  10:32:58</span>
+                    <select name="" id="" class="select">
+                        <option>5분 주기</option>
+                        <option selected="selected">10분 주기</option>
+                        <option>15분 주기</option>
+                        <option>20분 주기</option>
+                        <option>25분 주기</option>
+                        <option>30분 주기</option>
+                    </select>
+                </p>
+            </div>
+            <div class="summary-area">
+                <div class="item">
+                    <h3>총 대상수 <span class="tip" title="현재일까지 등록된 총 대상의 수"></span></h3>
+                    <div class="value">15</div>
+                </div>
+                <div class="item">
+                    <h3>총 단말수 <span class="tip" title="현재일까지 등록된 총 단말의 수"></span></h3>
+                    <div class="value">12</div>
+                </div>
+                <div class="item">
+                    <h3>단말이용률 <span class="tip" title="현재일까지 대상과 매핑된 단말 중,<br> 1회 이상 데이터 수집이 된 단말의 비율"></span></h3>
+                    <div class="value">92%</div>
+                </div>
+                <div class="item">
+                    <h3>SMS 발송건 <span class="tip" title="현재일까지 발송된 SMS의 건수<br> (OTP 제외)"></span></h3>
+                    <div class="value">1,234</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="left">
+                <div class="graph-area">
+                    <div class="item">
+                        <h3>전원ON <span class="tip" title="전체 대상 중, 단말과 매핑이 되어 있고 전원이 켜져 있는 대상의 수 (조회 당일 기준)<br>* 하단 그래프 : 최근 일주일간의 전원 ON 대상 추이 "></span></h3>
+                        <div class="value odometer" data-end="15"></div>
+                        <div class="chart" id="chart-power"></div>
+                    </div>
+                    <div class="item">
+                        <h3>대상 미매핑 <span class="tip" title="전체 대상 중, 단말과 매핑되지 않은 대상의 수 (조회 당일 기준)<br>* 하단 그래프 : 최근 일주일간의 대상 미매핑 추이"></span></h3>
+                        <div class="value odometer" data-end="2"></div>
+                        <div class="chart" id="chart-asset"></div>
+                    </div>
+                    <div class="item">
+                        <h3>비상 호출 <span class="tip" title="단말과 매핑된 대상 중, Emergency 버튼이 눌린 대상의 수<br>* 하단 그래프 : 최근 일주일간의 비상호출 추이"></span></h3>
+                        <div class="value odometer" data-end="5"></div>
+                        <div class="chart" id="chart-er"></div>
+                    </div>
+                    <div class="item">
+                        <h3>지오펜스 진입 <span class="tip" title="설정되어 있는 지오펜스 지역에 진입한 대상의 수<br>* 하단 그래프 : 최근 일주일간의 지오펜스 진입 대상 추이"></span></h3>
+                        <div class="value odometer" data-end="7"></div>
+                        <div class="chart" id="chart-geo"></div>
+                    </div>
+                    <div class="item">
+                        <h3>지오펜스 이탈 <span class="tip" title="설정되어 있는 지오펜스 지역에서 이탈한 대상의 수<br>* 하단 그래프 : 최근 일주일간의 지오펜스 이탈 대상 추이"></span></h3>
+                        <div class="value odometer" data-end="1"></div>
+                        <div class="chart" id="chart-error"></div>
+                    </div>
+                </div>
+
+
+                <div class="battery-statu-area">
+                    <h3>배터리 현황</h3>
+                    <p>자산에 매핑된 전체 단말기의 배터리 상태 현황입니다.</p>
+                    <div class="chart">
+                        <div id="chart-battery"></div>
+                        <div id="chart-battery-bar"></div>
+                    </div>
+                </div>
+
+                <div class="battery-device-area">
+                    <h3>배터리 잔량별 단말수</h3>
+                    <div class="chart" id="chart-battery-device"></div>
+                </div>
+
+
+                <div class="time-data-area">
+                    <h3>데이터 수집주기별 단말수</h3>
+                    <p>현재일 기준 데이터 수집 주기별 단말의 수입니다.</p>
+                    <ul>
+                        <li><span class="titie">최소 수집건수</span><span class="value">1<small>시간</small></span></li>
+                        <li><span class="titie">최고 수집건수</span><span class="value">24<small>시간</small></span></li>
+                        <li><span class="titie">평균 수집주기</span><span class="value">10<small>시간</small></span></li>
+                    </ul>
+                    <div class="chart" id="chart-data-device"></div>
+                </div>
+
+                <div class="device-type-area">
+                    <h3>단말타입 현황</h3>
+                    <p>타입별 단말 수와 해당 단말타입의 센서 정보입니다.</p>
+                    <div class="device-info">
+                        <div class="header">
+                            <span class="title"></span>
+                            <span class="value"></span>
+                        </div>
+                        <ul></ul>
+                    </div>
+                    <div class="chart" id="chart-device-type"></div>
+                </div>
+            </div>
+
+            <div class="tracking-area">
+                <div class="header">
+                    <div class="title">데이터 미수신 대상 수</div>
+                    <div class="value">8
+                        <small>개</small>
+                    </div>
+                </div>
+
+                <div class="log">
+                    <p>조회 당일의 데이터 미수신 대상 목록</p>
+                    <ul data-scroll="true">
+                        <li><img src="../img/thum_user_48.png" alt=""><span class="title">컨테이너 트럭 컨테이너 트럭 컨테이너 트럭</span><span class="value">20<small>분전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">컨테이너 트럭</span><span class="value">1<small>시간전</small></span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row-3">
+            <div class="geopence-setting-area box-extend">
+                <h3>지오펜스 설정 현황</h3>
+                <p>현재일 기준 설정된 지오펜스 지역 현황입니다.</p>
+                <button type="button" class="btn-extend"><span class="sr-only">확대</span></button>
+                <div class="map"></div>
+                <div class="list">
+                    <div class="header"><span>설정 대상</span> <span>총 <strong>12</strong>개</span></div>
+                    <div class="body" data-scroll="true">
+                        <ul>
+                            <li class="thead"><span></span><span>대상명</span><span>소속그룹</span></li>
+                            <li><img src="../img/thum_user_48.png" alt=""><span class="target">컨테이너 트럭컨테이너 트럭컨테이너 트럭컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                            <li><img src="../img/thum_48.png" alt=""><span class="target">컨테이너 트럭</span> <span class="team">운영1팀</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="geopence-target-area">
+                <h3>최근 지오펜스 IN/OUT 대상</h3>
+                <p>설정된 지오펜스 지역에서 최근 IN/OUT 변동이 생긴 대상입니다.</p>
+                <div class="legend"><span>진입(IN)</span><span>이탈(OUT)</span></div>
+                <div class="content">
+                    <div data-scroll="true" data-direction="horizontal">
+                        <div class="scroll-wrapper">
+                            <div class="item " data-target="in">
+                                <img src="../img/thum_user_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="out">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="out">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="in">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="in">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="out">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+
+                            <div class="item" data-target="in">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+                            <div class="item" data-target="out">
+                                <img src="../img/thum_58.png" alt="">
+                                <ul>
+                                    <li>대상명</li>
+                                    <li>단말명</li>
+                                    <li>IMEI</li>
+                                    <li>2017.12.25</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

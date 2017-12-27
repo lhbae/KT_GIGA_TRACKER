@@ -1,0 +1,258 @@
+table {
+  a {
+    text-decoration: underline;
+  }
+  th {
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 13px !important;
+    height: auto;
+  }
+}
+
+// jqgrid
+#page-asset, #page-device, #page-admin, #page-setting {
+  overflow-y: scroll;
+}
+
+.ui-jqgrid {
+  //overflow: hidden;
+
+  th, td {
+    font-size: 13px;
+    font-weight: 400;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  tr.jqgrow {
+    background-color: #fff;
+    td {
+      height: 48px;
+      border: 0;
+    }
+    &:nth-child(odd) {
+      background-color: #ebebeb;
+    }
+    &:last-child {
+      td:first-child {
+        border-radius: 0 0 0 7px;
+      }
+      td:last-child {
+        border-radius: 0 0 7px;
+      }
+    }
+  }
+
+  // thead
+  .ui-jqgrid-hdiv {
+    table {
+      border-radius: 7px 7px 0 0;
+      background-color: #ebebeb;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  .ui-jqgrid-htable th {
+    height: 60px;
+    div {
+      height: auto;
+    }
+  }
+
+  // tbody
+  .ui-jqgrid-bdiv {
+    overflow: hidden; // resize 시 생성되는것 예방
+  }
+  .ui-jqgrid-btable {
+    background-color: transparent;
+  }
+
+  .ui-jqgrid-bdiv .ui-state-hover {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 17px;
+      height: 48px;
+      border: 1px solid #2bb7b3;
+      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2);
+    }
+    a, .btn, .form-control {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .form-control {
+    width: auto;
+    display: inline-block;
+  }
+
+  [aria-selected="true"] {
+    td {
+      font-weight: 700 !important;
+    }
+    .btn {
+      font-weight: 700 !important;
+    }
+  }
+
+}
+
+.table-colspan {
+  .ui-jqgrid-htable th {
+    height: auto;
+    padding: 12px 0;
+    border: 1px solid #ddd;
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  [aria-hidden="true"] th {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+}
+
+.resize .ui-jqgrid-bdiv .ui-state-hover:after {
+  right: 0;
+}
+
+.scroll {
+  .ui-jqgrid-hbox {
+    background-color: #ebebeb;
+    border-radius: 7px 10px 0 0;
+  }
+  .ui-jqgrid-bdiv {
+    overflow: auto;
+  }
+
+  .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover {
+    &:after {
+      right: 0;
+    }
+  }
+}
+
+.tree {
+  border-radius: 7px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+
+  .ui-icon.fa {
+    background-image: none;
+    font-size: 14px;
+  }
+
+  .ui-jqgrid {
+    .ui-jqgrid-bdiv {
+      overflow: auto;
+      //overflow-x: hidden;
+    }
+    .ui-jqgrid-labels {
+      display: none;
+    }
+
+    tr.jqgrow {
+      background-color: transparent;
+      td {
+        padding-left: 15px;
+      }
+      &:nth-child(odd) {
+        background-color: transparent;
+      }
+      &:last-child {
+        td:first-child {
+          border-radius: 0;
+        }
+        td:last-child {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .ui-jqgrid-bdiv .ui-state-hover {
+      //background-color: #fff;
+      &:after {
+        display: none;
+      }
+    }
+
+    [aria-selected="true"] {
+      background-color: #fff !important;
+      text-decoration: underline;
+    }
+  }
+}
+
+.footer .pagination {
+  padding: 0;
+}
+.pagination {
+  margin: 0;
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  .page-item a {
+    min-height: 3rem;
+    min-width: 2.6rem;
+    background: transparent;
+    color: #585a58;
+    border: 0;
+    font-size: 16px;
+    &:before {
+      @include fa-icon();
+      content: '';
+      display: inline-block;
+      font-size: 20px;
+      color: #585a58;
+    }
+    &:hover {
+      color: #999;
+    }
+  }
+  .page-item.disabled a {
+    background-color: transparent;
+    opacity: .3;
+  }
+  .ico-first a:before {
+    content: $fa-var-angle-double-left;
+  }
+  .ico-prev a:before {
+    content: $fa-var-angle-left;
+  }
+  .ico-next a:before {
+    content: $fa-var-angle-right;
+  }
+  .ico-last a:before {
+    content: $fa-var-angle-double-right;
+  }
+
+  .page-link {
+    color: #2bb7b3;
+  }
+  .page-item.active .page-link {
+    background-color: transparent;
+    color: #f25053;
+  }
+}
+
+.ie11 {
+  .ui-jqgrid table {
+    border-collapse: separate;
+  }
+  .ui-jqgrid .custom-checkbox {
+    //margin-bottom: 28px;
+  }
+}
+
+.table-hover {
+  border-bottom: 1px solid #e9ecef;
+}
+

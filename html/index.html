@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m00000000")</script>
+    <script>window.location = 'm02000000.html';</script>
+</head>
+<body>
+
+<div id="main" class="wrap">
+    <div class="content">
+
+        <div class="welcome-area">
+            <h2 class="title">WELCOME!</h2>
+            <p class="sub-title"><span>홍길동님</span><span class="date">최근 접속일 <span>2017.08.08 10:32:58</span></span></p>
+        </div>
+
+        <div class="weather-area">
+            <div class="icon"></div>
+            <div class="information">
+                <span class="title">Today</span>
+                <span class="date">2017.08.11</span>
+                <span class="degree">27</span>
+            </div>
+        </div>
+
+        <div class="row system-area">
+            <div class="col">
+                <span class="title">ON/전체<span class="tip" title="마우스오버시 안내문구를 보여줍니다."></span></span>
+                <span class="value"><span class="odometer" data-end="19"></span>/25</span>
+            </div>
+            <div class="col">
+                <span class="title">비상호출<span class="tip" title="마우스오버시 안내문구를 보여줍니다."></span></span>
+                <span class="value"><span class="odometer" data-end="3"></span></span>
+            </div>
+            <div class="col">
+                <span class="title">지역이탈<span class="tip" title="마우스오버시 안내문구를 보여줍니다."></span></span>
+                <span class="value"><span class="odometer" data-end="5"></span></span>
+            </div>
+            <div class="col">
+                <span class="title">수신오류<span class="tip" title="마우스오버시 안내문구를 보여줍니다."></span></span>
+                <span class="value"><span class="odometer" data-end="2"></span></span>
+            </div>
+            <div class="col">
+                <span class="title">미매핑<span class="tip" title="마우스오버시 안내문구를 보여줍니다."></span></span>
+                <span class="value"><span class="odometer" data-end="1"></span></span>
+            </div>
+        </div>
+
+
+        <div class="monitoring-area box-extend box">
+            <div class="header">
+                <span class="title">모니터링</span>
+                <a href="m02000000.html" class="btn btn-go"><span class="sr-only">자세히보기</span></a>
+            </div>
+            <div class="body">
+                <div class="map">
+                    <!--<div class="spot" data-position="100,20">1</div>-->
+                    <!--<div onclick="" class="marker" data-position="100,100" tabindex="0"><img src="../img/marker_in.png" alt=""></div>-->
+                    <!--<div onclick="marker()" class="marker" data-position="100,200" tabindex="0"><img src="../img/marker_type1.png" alt=""></div>-->
+                    <!--<div onclick="marker()" class="marker" data-position="100,300" tabindex="0"><img src="../img/marker_type2.png" alt=""></div>-->
+                    <!--<div onclick="marker()" class="marker" data-position="100,400" tabindex="0"><img src="../img/marker_type3.png" alt=""></div>-->
+                </div>
+            </div>
+        </div>
+
+
+        <div class="event-area box-extend box">
+            <div class="header">
+                <span class="title">실시간 이벤트</span>
+                <a href="m01000000.html" class="btn btn-go"><span class="sr-only">자세히보기</span></a>
+            </div>
+            <div class="body">
+                <!-- event.html -->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    eventDraw();
+
+    function eventDraw() {
+        if (!$('.event-area').length) return;
+        $.ajax({
+            url: 'event.html',
+            cache: false
+        }).done(function (data) {
+            $('.event-area .body').append(data);
+        });
+    }
+</script>
+</body>
+</html>

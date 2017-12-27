@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/dashboard_general.js"></script>
+    <script>ui.menuSet("m01000000")</script>
+</head>
+<body class="no-sidebar">
+
+<div id="dashboard" class="wrap general">
+    <div class="content">
+        <div class="row-1">
+            <div class="greeting-area">
+                <h3>안녕하세요! KT관리자님</h3>
+                <p>최근 업데이트 <span>2017.08.08  10:32:58</span>
+                    <select name="" id="" class="select">
+                        <option>5분 주기</option>
+                        <option selected="selected">10분 주기</option>
+                        <option>15분 주기</option>
+                        <option>20분 주기</option>
+                        <option>25분 주기</option>
+                        <option>30분 주기</option>
+                    </select>
+                </p>
+            </div>
+            <div class="summary-area">
+                <!--<div class="selectmenu">-->
+                    <!--<div class="title">전체</div>-->
+                    <!--<div class="content">-->
+                        <!--<ul>-->
+                            <!--<li>1</li>-->
+                            <!--<li>2</li>-->
+                            <!--<li>3</li>-->
+                            <!--<li>4</li>-->
+                            <!--<li>5</li>-->
+                            <!--<li>6</li>-->
+                            <!--<li>7</li>-->
+                        <!--</ul>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <select name="" id="" class="select">
+                    <option selected="selected">전체</option>
+                    <option>일이삼사오륙칠팔구</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+                <div class="item">
+                    <h3>총 대상수 <span class="tip" title="현재일까지 등록된 전체 기업의 총 대상 수"></span></h3>
+                    <div class="value">15</div>
+                </div>
+                <div class="item">
+                    <h3>총 단말수 <span class="tip" title="현재일까지 등록된 전체 기업의 총 단말 수"></span></h3>
+                    <div class="value">12</div>
+                </div>
+                <div class="item">
+                    <h3>단말이용률 <span class="tip" title="현재일까지 대상과 매핑된 전체 기업의 단말 중,<br> 1회 이상 데이터 수집이 된 단말의 비율"></span></h3>
+                    <div class="value">92%</div>
+                </div>
+                <div class="item">
+                    <h3>SMS 발송건 <span class="tip" title="현재일까지 발송된 전체 기업의 총 SMS 건수<br> (OTP 제외)"></span></h3>
+                    <div class="value">1,234</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="left">
+                <div class="graph-area">
+                    <div class="item">
+                        <h3>가입 기업수 <span class="tip" title="조회 당일까지 가입된 전체 기업의 수<br>* 하단 그래프 : 최근 일주일간의 가입 기업 추이"></span></h3>
+                        <div class="value odometer" data-end="15"></div>
+                        <div class="chart" id="chart-power"></div>
+                    </div>
+                    <div class="item">
+                        <h3>평균 대상수 <span class="tip" title="기업별 등록한 대상의 평균 수"></span></h3>
+                        <div class="value odometer" data-end="2"></div>
+                        <div class="chart" id="chart-asset"></div>
+                    </div>
+                    <div class="item">
+                        <h3>평균 단말수 <span class="tip" title="기업별 보유 또는 개통한 단말의 평균 수"></span></h3>
+                        <div class="value odometer" data-end="5"></div>
+                        <div class="chart" id="chart-er"></div>
+                    </div>
+                    <div class="item">
+                        <h3>평균 이용율 <span class="tip" title="기업별로 1회 이상 데이터 수집이 된 단말의 평균 비율<br>* 하단 그래프 : 최근 일주일간의 평균 이용율 추이"></span></h3>
+                        <div class="value odometer" data-end="7"></div>
+                        <div class="chart" id="chart-geo"></div>
+                    </div>
+                    <div class="item">
+                        <h3>관리자 접속현황 <span class="tip" title="조회 당일 관리자 페이지에 접속한 기업 관리자의 수<br>* 하단 그래프 : 최근 일주일간의 관리자 접속 추이"></span></h3>
+                        <div class="value odometer" data-end="1"></div>
+                        <div class="chart" id="chart-error"></div>
+                    </div>
+                </div>
+
+
+                <div class="battery-statu-area">
+                    <h3>배터리 현황</h3>
+                    <p>자산에 매핑된 전체 단말기의 배터리 상태 현황입니다.</p>
+                    <div class="chart">
+                        <div id="chart-battery"></div>
+                        <div id="chart-battery-bar"></div>
+                    </div>
+                </div>
+
+                <div class="battery-device-area">
+                    <h3>기업별 배터리 부족 단말수</h3>
+                    <div data-scroll="true" data-direction="horizontal">
+                        <div class="scroll-wrapper">
+                            <div class="chart" id="chart-battery-device"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="time-data-area">
+                    <h3>기업별 매핑 단말수</h3>
+                    <p>현재일 기준 데이터 수집 주기별 단말의 수입니다.</p>
+                    <div data-scroll="true" data-direction="horizontal">
+                        <div class="scroll-wrapper">
+                            <div class="chart" id="chart-data-device"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="device-type-area">
+                    <h3>단말타입 현황</h3>
+                    <p>타입별 단말 수와 해당 단말타입의 센서 정보입니다.</p>
+                    <div class="device-info">
+                        <div class="header">
+                            <span class="title"></span>
+                            <span class="value"></span>
+                        </div>
+                        <ul></ul>
+                    </div>
+                    <div class="chart" id="chart-device-type"></div>
+                </div>
+            </div>
+
+            <div class="tracking-area">
+                <div class="header">
+                    <div class="title">데이터 미수신 대상 수</div>
+                    <div class="value">8
+                        <small>건</small>
+                    </div>
+                </div>
+
+                <div class="log">
+                    <p>조회 당일의 기업별 데이터 미수신 대상 수</p>
+                    <ul data-scroll="true">
+                        <li><img src="../img/thum_user_48.png" alt=""><span class="title">한진중공업한진중공업한진중공업한진중공업한진중공업</span><span class="value">20<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">한진중공업</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                        <li><img src="../img/thum_48.png" alt=""><span class="title">세종시</span><span class="value">1<small>건</small></span></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+</body>
+</html>

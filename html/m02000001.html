@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m02000001")</script>
+</head>
+<body class="no-sidebar">
+
+<div id="monitoring" class="wrap">
+
+    <div id="header">
+        <h1>모니터링 상세보기</h1>
+    </div>
+
+    <div class="content">
+
+        <div class="monitoring-area">
+            <div class="map" style="top: 65px;"></div>
+            <div class="marker marker-primary" data-position="800,400" tabindex="0">1</div>
+            <div class="marker marker-primary" data-position="1000,500" tabindex="0">2</div>
+        </div>
+
+        <div class="form-header">
+            <div class="form-inline">
+                <input type="text" class="datepicker form-control">
+                <span>~</span>
+                <input type="text" class="datepicker form-control">
+                <button type="button" class="btn btn-primary" onclick="eventLog();">이력조회</button>
+                <button type="button" class="btn btn-primary">경로보기</button>
+            </div>
+        </div>
+
+        <div class="submenu monitoring-detail">
+
+            <div class="header">
+                <div class="thum">
+                    <img src="../img/list_thum.png" alt="">
+                    <dl>
+                        <dt>트럭1</dt>
+                        <dd>KTA00000001</dd>
+                        <dd>물류 > 이동체</dd>
+                    </dl>
+                </div>
+            </div>
+
+            <div class="tabs tabs-secondary">
+                <ul>
+                    <li><a href="#tabs-1">기본정보</a></li>
+                    <li><a href="#tabs-2">설정정보</a></li>
+                </ul>
+
+                <div id="tabs-1">
+
+                    <h4>단말상세</h4>
+
+                    <ul class="list">
+                        <li>
+                            <span class="title">단말 모델명</span>
+                            <span class="value">TRACKER-001</span>
+                        </li>
+                        <li>
+                            <span class="title">단말ID</span>
+                            <span class="value">10000100001</span>
+                        </li>
+                        <li>
+                            <span class="title">위치</span>
+                            <span class="value">경기도 성남시 분당구 판교로</span>
+                        </li>
+                        <li>
+                            <span class="title">단말상태</span>
+                            <span class="value">전원ON</span>
+                        </li>
+                        <li>
+                            <span class="title">수신시간</span>
+                            <span class="value">2017-07-07 15:35:15</span>
+                        </li>
+                        <li>
+                            <span class="title">GPS시간</span>
+                            <span class="value">2017-07-07 15:35:15</span>
+                        </li>
+                    </ul>
+
+                    <h4>단말상태</h4>
+                    <ul class="list">
+                        <li>
+                            <span class="title">통신종류</span>
+                            <span class="value">wifi</span>
+                        </li>
+                        <li>
+                            <span class="title">배터리</span>
+                            <span class="value">35%</span>
+                        </li>
+                        <li>
+                            <span class="title">충격</span>
+                            <span class="value">5G</span>
+                        </li>
+                        <li>
+                            <span class="title">온도</span>
+                            <span class="value">35℃</span>
+                        </li>
+                        <li>
+                            <span class="title">습도</span>
+                            <span class="value">15%</span>
+                        </li>
+                        <li>
+                            <span class="title">속도</span>
+                            <span class="value">60km/h</span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div id="tabs-2">
+
+                    <h4>설정된 알림기준치</h4>
+
+                    <ul class="list">
+                        <li>
+                            <span class="title">배터리</span>
+                            <span class="value"><span>20%</span>이하</span>
+                        </li>
+                        <li>
+                            <span class="title">충격</span>
+                            <span class="value"><span>50G</span>이상</span>
+                        </li>
+                        <li>
+                            <span class="title">온도</span>
+                            <span class="value"><span>35℃</span><span>이상</span><span>65℃</span>이하</span>
+                        </li>
+                        <li>
+                            <span class="title">습도</span>
+                            <span class="value"><span>20%</span><span>이상</span><span>80%</span>이하</span>
+                        </li>
+                        <li>
+                            <span class="title">속도</span>
+                            <span class="value"><span>60km/h</span>이상</span>
+                        </li>
+                    </ul>
+
+                    <h4>설정지역</h4>
+                    <table id="table-geofence" class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <th colspan="2">항만공사 신항만 1A지역</th>
+                        </tr>
+                        <tr>
+                            <td>350m</td>
+                            <td><span class="ellipsis">부산광역시 남구 감만동 123-45</span></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">항만공사 신항만 1A지역</th>
+                        </tr>
+                        <tr>
+                            <td>350m</td>
+                            <td><span class="ellipsis">부산광역시 남구 감만동 123-45</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="event-log flex">
+        <button type="button" class="btn btn-toggle" onclick="eventLog()"><span class="sr-only">이력조회 창닫기</span></button>
+
+        <div class="body">
+
+            <div class="header">
+                <h3>이벤트 이력</h3>
+                <div class="counter">총 이동 거리: 10km</div>
+            </div>
+
+            <div id="event-log">
+
+                <select name="" id="select-event-log" class="">
+                    <option data-icon="AL">전체 <span class="value">35</span></option>
+                    <option data-icon="BA">배터리경보 <span class="value">9</span></option>
+                    <option data-icon="GI">지오펜스 <span class="value">8</span></option>
+                    <option data-icon="SH">충격 <span class="value">9</span></option>
+                    <option data-icon="TM">온도 <span class="value">9</span></option>
+                    <option data-icon="HM">습도 <span class="value">9</span></option>
+                    <option data-icon="SP">속도 <span class="value">9</span></option>
+                    <option data-icon="ER">비상호출 <span class="value">9</span></option>
+                    <option data-icon="ET">기타 <span class="value">9</span></option>
+                </select>
+
+                <div data-scroll="true" data-height="700">
+                    <ul class="list">
+                        <li><span class="badge active">5</span><i data-icon="GI"></i><span class="date">2017-06-23 21:23:00</span></li>
+                        <li>
+                            <span class="badge">4</span>
+                            <div class="log-list">
+                                <div><i data-icon="SH"></i><span class="date">2017-06-23 21:23:00</span></div>
+                                <div><i data-icon="ER"></i><span class="date">2017-06-23 21:23:00</span></div>
+                                <div><i data-icon="GO"></i><span class="date">2017-06-23 21:23:00</span></div>
+                                <div><i data-icon="ET"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">3</span>
+                            <div class="log-list">
+                                <div><i data-icon="TM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">2</span>
+                            <div class="log-list">
+                                <div><i data-icon="HM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">1</span>
+                            <div class="log-list">
+                                <div><i data-icon="SP"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="GI"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="BA"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SH"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="TM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="HM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SP"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="GI"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="BA"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SH"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="TM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="HM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SP"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="GI"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="BA"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SH"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="TM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="HM"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                        <li><span class="badge">0</span>
+                            <div class="log-list">
+                                <div><i data-icon="SP"></i><span class="date">2017-06-23 21:23:00</span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+    function eventLog() {
+        var $this = $('.event-log');
+        $this.toggleClass('active');
+        $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
+    }
+
+    $.widget("custom.iconselectmenu", $.ui.selectmenu, {
+        _renderItem: function (ul, item) {
+            var li = $("<li>"),
+                wrapper = $("<div>", {html: item.label.split(' ')[0] + '<span class="value">' + item.label.split(' ')[1] + '</span>'})
+                    .attr({"data-icon": item.element.attr("data-icon")});
+
+            if (item.disabled) {
+                li.addClass("ui-state-disabled");
+            }
+
+            return li.append(wrapper).appendTo(ul);
+        },
+        _setText: function (element, value, i) {
+            var icon = '';
+            if (value) {
+                var v = value.split(' ');
+                switch (v[0]) {
+                    case '전체' : icon = 'AL'; break;
+                    case '배터리경보' : icon = 'BA'; break;
+                    case '지오펜스' : icon = 'GI'; break;
+                    case '충격' : icon = 'SH'; break;
+                    case '온도' : icon = 'TM'; break;
+                    case '습도' : icon = 'HM'; break;
+                    case '속도' : icon = 'SP'; break;
+                    case '비상호출' : icon = 'ER'; break;
+                    case '기타' : icon = 'ET'; break;
+                    default : icon = ''; break;
+                }
+
+                element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
+            } else {
+                element.html("&#160;");
+            }
+        }
+    });
+
+    $("#select-event-log").iconselectmenu();
+</script>
+</body>
+</html>

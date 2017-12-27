@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>egjs-infinitegrid</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <style>
+        #list {
+            height: 300px;
+        }
+
+        .item {
+            border: 1px solid #ddd;
+            width: 100%;
+            height: 50px;
+            box-sizing: border-box;
+            transition: border .2s ease-in-out;
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>egjs-infinitegrid</h1>
+<div id="list"></div>
+
+<script src="../js/vendor/jquery.js"></script>
+<script src="https://naver.github.io/egjs-infinitegrid/release/latest/dist/infinitegrid.pkgd.js"></script>
+<script>
+    $(function () {
+        var max = 50;
+        function getItems(groupNo) {
+//            groupNo *= 10;
+
+            var items = [];
+            for (var i = 0; i < 10; i++) {
+                items.push('<div class="item">' + (i+1) + '</div>');
+            }
+            return items;
+        }
+
+        // creating instance
+        var ig = new eg.InfiniteGrid("#list", {
+            count: 11,
+            defaultGroupKey: 0,
+            isOverflowScroll: true
+        })
+            .on({
+                "append": function (e) {
+                    var gk = this.getGroupKeys();
+                    var lastGk = gk[gk.length - 1];
+                    lastGk++;
+                    ig.append(getItems(lastGk), lastGk);
+                },
+                "prepend": function (e) {
+                    var firstGk = this.getGroupKeys()[0];
+                    firstGk--;
+                    if (firstGk >= 0) {
+                        ig.prepend(getItems(firstGk), firstGk);
+                    }
+                }
+            });
+        ig.append(getItems(0), 0);
+
+    });
+</script>
+</body>
+</html>

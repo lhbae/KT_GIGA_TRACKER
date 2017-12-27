@@ -1,0 +1,51 @@
+<div class="form form-layout">
+    <div class="row">
+        <div class="col-6">
+            <label for="" class="required">메뉴ID</label><input type="search" class="form-control" required disabled>
+        </div>
+        <div class="col-6">
+            <label for="" class="required">메뉴명</label><input type="search" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="" class="required">메뉴영문명</label><input type="search" class="form-control" required>
+        </div>
+        <div class="col-6">
+            <label for="" class="required">메뉴국문설명</label><input type="search" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="" class="required">메뉴영문설명</label><input type="search" class="form-control" required>
+        </div>
+        <div class="col-6">
+            <label for="" class="required">정렬순서</label><input type="search" class="form-control" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="" class="">상위메뉴ID</label><input onclick="topmenuSearch()" type="search" class="form-control">
+            <button type="button" class="btn btn-secondary active ml-2">제거</button>
+        </div>
+        <div class="col-6">
+            <label for="" class="">상위메뉴명</label><input type="search" class="form-control" disabled>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <label for="" class="">프로그램ID</label><input onclick="programSearch()" type="search" class="form-control">
+            <button type="button" class="btn btn-secondary active ml-2">제거</button>
+        </div>
+        <div class="col-6">
+            <label for="" class="">프로그램명</label><input type="search" class="form-control" disabled>
+        </div>
+    </div>
+</div>
+
+
+<div class="footer">
+    <button onclick="goPage('m06020000.html')" type="button" class="btn btn-secondary">취소</button>
+    <button onclick="goPage('m06020000.html')" type="button" class="btn btn-primary">저장</button>
+</div>

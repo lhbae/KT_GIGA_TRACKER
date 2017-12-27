@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .pagination li {
+            display:inline-block;
+            padding:5px;
+        }
+    </style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+<div id="test-list">
+    <ul class="list">
+        <li>Guybrush Threepwood</li>
+        <li>Elaine Marley</li>
+        <li>LeChuck</li>
+        <li>Stan</li>
+        <li>Voodoo Lady</li>
+        <li>Herman Toothrot</li>
+        <li>Meathook</li>
+        <li>Carla</li>
+        <li>Otis</li>
+        <li><p class="name">Rapp Scallion</p></li>
+        <li><p class="name">Rum Rogers Sr.</p></li>
+        <li><p class="name">Men of Low Moral Fiber</p></li>
+        <li><p class="name">Murray</p></li>
+        <li><p class="name">Cannibals</p></li>
+    </ul>
+    <ul class="pagination"></ul>
+</div>
+<script>
+    var monkeyList = new List('test-list', {
+        page: 10,
+        pagination: true
+    });
+</script>
+</body>
+</html>

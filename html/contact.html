@@ -1,0 +1,52 @@
+<div id="view-contact" class="dialog" title="연락처 보기">
+
+    <table id="table-contact"></table>
+
+    <!--<ul class="pagination">-->
+    <!--<li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>-->
+    <!--<li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>-->
+    <!--<li class="page-item active"><a class="page-link" href="#">1</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">2</a></li>-->
+    <!--<li class="page-item"><a class="page-link" href="#">3</a></li>-->
+    <!--<li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>-->
+    <!--<li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>-->
+    <!--</ul>-->
+</div>
+
+<script>
+
+    function tableContact() {
+        $("#table-contact").jqGrid({
+            url: '../js/contact.json',
+            datatype: "json",
+            width: 100,
+            autowidth: true,
+            shrinkToFit: true,
+            height: 200,
+            loadtext: '로딩중...',
+//            multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+            sortname: 'idx',
+            sortorder: "desc",
+            sortable: true,
+            rowNum: 5,
+            colNames: ["이름", "연락처", "비고"],
+            colModel: [
+                {name: "name", align: "center", width: '30%'},
+                {name: "tel", align: "center", width: '50%'},
+                {name: "etc", align: "center", width: '20%'}
+            ]
+        });
+    }
+
+    function viewContactOpen() {
+        var $viewContact = $('#view-contact').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 500,
+            dialogClass: 'view-contact',
+            open: function () {
+                tableContact();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,92 @@
+<div id="device-type-select" class="dialog" title="단말타입 선택">
+
+    <div class="table-header justify-content-between mt-0 mb-4">
+        <div class="form-inline">
+            <div class="input-group">
+                <span class="input-group-addon ico-search"></span>
+                <input type="text" class="form-control" placeholder="단말타입명">
+                <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+            </div>
+        </div>
+        <span class="counter">전체<span>25</span>개</span>
+    </div>
+
+    <div class="scroll table-colspan">
+        <table id="device-type-select-table"></table>
+    </div>
+
+</div>
+
+
+<script>
+    // thead의 센서정보가 중복되는것 처리
+    var deviceTypeSelectOpenCheck = true;
+
+    function deviceTypeSelectOpen() {
+
+        $('#device-type-select').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 1000,
+            height: 780,
+            dialogClass: 'device-type-select',
+            open: function () {
+
+                $("#device-type-select-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    height: 480,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    loadtext: '로딩중...',
+//                    multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+                    sortname: 'idx',
+                    sortorder: 'desc',
+                    sortable: true,
+                    scrollerbar: false,
+//                    rowNum: 10,
+                    colNames: ["단말타입명", "통신조절", "수집조절", "충격", "속도", "온도", "습도", "비고"],
+                    colModel: [
+                        {name: "hndsetModelNm", align: "center"},
+                        {name: "aaa", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"},
+                        {name: "", align: "center"}
+                    ]
+                });
+
+                if (!deviceTypeSelectOpenCheck) return;
+
+                $("#device-type-select-table").jqGrid('setGroupHeaders', {
+                    useColSpanStyle: true,
+                    groupHeaders: [
+                        {startColumnName: 'aaa', numberOfColumns: 6, titleText: '단말기능'}
+                    ]
+                });
+
+                return deviceTypeSelectOpenCheck = false;
+
+            },
+            buttons: {
+                "취소": {
+                    'class': 'btn btn-secondary',
+                    'text': '취소',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                "선택": {
+                    'class': 'btn btn-primary',
+                    'text': '선택',
+                    click: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            }
+        });
+    }
+</script>

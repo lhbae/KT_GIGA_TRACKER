@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+</head>
+<body>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column',
+            backgroundColor: 'rgba(0,0,0,0)'
+//            spacing: 0,
+//            margin: 20
+        },
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        credits: {
+            enabled: false
+        },
+        xAxis: {
+            categories: ['1-5', '6-10', '11-20', '21-40', '41-60', '61-80', '81-100'],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            max: 20,
+            title: {
+                text: ''
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+            colorByPoint: true,
+            data: [2, 3, 6, 10, 7, 7, 4]
+        }],
+        colors: ["#2eb8b6", "#fbc143", "#fc5856", "#2eb8b6", "#fbc143", "#fc5856", "#2eb8b6"]
+    });
+</script>
+</body>
+</html>

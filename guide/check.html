@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    window.Android.openApp();
+</script>
+<!--
+ @JavascriptInterface
+    public void openApp () {
+        boolean isExist = false;
+
+        PackageManager packageManager = mContext.getPackageManager();
+        List<ResolveInfo> mApps;
+        Intent mIntent = new Intent(Intent.ACTION_MAIN, null);
+        mIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        mApps = packageManager.queryIntentActivities(mIntent, 0);
+
+        try {
+            for (int i = 0; i < mApps.size(); i++) {
+                if(mApps.get(i).activityInfo.packageName.startsWith("com.app.app.app")){
+                    isExist = true;
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            isExist = false;
+        }
+
+        // 설치되어 있으면
+        if(isExist){
+            Intent intent = mContext.getPackageManager().getLaunchIntentForPackage("com.app.app.app");
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(intent);
+        }else{
+            Intent marketLaunch = new Intent(Intent.ACTION_VIEW);
+            marketLaunch.setData(Uri.parse("market://details?id=com.app.app.app"));
+            mContext.startActivity(marketLaunch);
+        }
+
+    }
+-->
+</body>
+</html>
