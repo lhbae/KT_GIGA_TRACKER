@@ -1,9 +1,0 @@
-{
-  "rows":[
-    {"account_id":"1","name":"한진중공업","parent_id":null,"level":0,"isLeaf":"false","loaded":"true","expanded":"true"},
-    {"account_id":"2","name":"영업1팀","parent_id":"1","level":1,"isLeaf":"false","loaded":"true","expanded":"true"},
-    {"account_id":"3","name":"영업지원부","parent_id":"2","level":2,"isLeaf":"true","loaded":"true","expanded":"true"},
-    {"account_id":"4","name":"영업2팀","parent_id":"1","level":1,"isLeaf":"true","loaded":"true","expanded":"true"},
-    {"account_id":"5","name":"기술1팀","parent_id":"1","level":1,"isLeaf":"true","loaded":"true","expanded":"true"}
-  ]
-}
