@@ -11,7 +11,7 @@ $.fn.extend({
                     $this.slimScroll({
                         height: h !== undefined ? h : 'auto',
                         color: '#64688b',
-                        size: '10px',
+                        size: '15px',
                         axis: v == 'horizontal' ? 'x' : 'y'
                     });
 
@@ -21,7 +21,7 @@ $.fn.extend({
                             $('.body .data-scroll').slimScroll({
                                 height: h,
                                 color: '#64688b',
-                                size: '10px'
+                                size: '15px'
                             });
                         }, 400);
                     }
