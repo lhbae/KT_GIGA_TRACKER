@@ -5938,11 +5938,11 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .device-item:active { background-color: rgba(0, 0, 0, 0.08); }
 
-#monitoring-list .item .device-item dl { width: 255px; }
+#monitoring-list .item .device-item dl { width: 250px; }
 
 #monitoring-list .item .device-item dt { /*display: -ms-flexbox; display: flex;*/ position: relative; }
 
-#monitoring-list .item .device-item dd { color: #787878; }
+#monitoring-list .item .device-item dd{overflow:hidden;color:#787878;text-overflow:ellipsis;white-space:nowrap;}
 
 #monitoring-list .item .device-item .btn { position: absolute; right: 15px; bottom: 15px; }
 
@@ -5950,7 +5950,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .device-item .btn-od{bottom:auto;top:15px;background-color:#cdcdcd;}
 
-#monitoring-list .item .device-item .btn-od:hover{background-color:#fff;}
+#monitoring-list .item .device-item .btn-od:hover{background-color:#f1f1f1;}
 
 .monitoring-detail { display: block !important; }
 
