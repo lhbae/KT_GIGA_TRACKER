@@ -11,7 +11,7 @@ $.fn.extend({
                     $this.slimScroll({
                         height: h !== undefined ? h : 'auto',
                         color: '#64688b',
-                        size: '5px',
+                        size: '10px',
                         axis: v == 'horizontal' ? 'x' : 'y'
                     });
 
@@ -21,7 +21,7 @@ $.fn.extend({
                             $('.body .data-scroll').slimScroll({
                                 height: h,
                                 color: '#64688b',
-                                size: '5px'
+                                size: '10px'
                             });
                         }, 400);
                     }
@@ -428,6 +428,29 @@ function checkPopup(id) {
             '등록': {
                 'class': 'btn btn-primary',
                 'text': '등록',
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }
+        }
+    };
+
+	var od = {
+        title: 'ON DEMAND',
+        open: function () {
+            $(this).html('<p>CTD-S100XL의 데이터를<br> 즉시 수신하시겠습니까?</p>');
+        },
+        buttons: {
+            '취소': {
+                'class': 'btn btn-secondary',
+                'text': '취소',
+                click: function () {
+                    $(this).dialog("close");
+                }
+            },
+            "확인": {
+                'class': 'btn btn-primary',
+                'text': '확인',
                 click: function () {
                     $(this).dialog("close");
                 }
