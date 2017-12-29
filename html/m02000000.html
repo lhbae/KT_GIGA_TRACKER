@@ -167,14 +167,14 @@
                             <div class="title">
                                 <div class="asset-thum"><img src="../img/list_thum.png" alt=""></div>
                                 <div class="asset-title" data-value="0">Asset Name Asset</div>
-                                <div class="asset-mapping">3개</div>
+                                <div class="asset-mapping">5개</div>
                                 <div class="asset-check"><input class="check-interest" type="checkbox" id=""></div>
                             </div>
                             <div class="content">
                                 <div class="device-item">
                                     <dl tabindex="0" onclick="marker()">
                                         <dt class="device-title">
-                                            <span class="device-name" data-value="0">CTD-S100 XL</span>
+                                            <span class="device-name" data-value="0">CTD-S100 XL 데이터미수신</span>
                                             <span class="device-serial">S/N : Asset02-123</span>
                                         </dt>
                                         <dd class="device-address">서울시 동작구 등용로4길 139 KT동작지사</dd>
@@ -184,6 +184,7 @@
                                         </dd>
                                     </dl>
                                     <button onclick="goPage('m02000001.html','_blank', 1280, 800)" type="button" class="btn btn-link">상세보기</button>
+									<button onclick="checkPopup('od')" type="button" title="ON DEMAND" class="btn btn-od">OD</button>
                                 </div>
                                 <div class="device-item">
                                     <dl tabindex="0" onclick="marker()">
@@ -213,13 +214,41 @@
                                     </dl>
                                     <button onclick="goPage('m02000001.html','_blank', 1280, 800)" type="button" class="btn btn-link">상세보기</button>
                                 </div>
+								<div class="device-item" tabindex="0" onclick="goPage('m02000001.html','_blank', 1280, 800)">
+                                    <dl tabindex="0" onclick="marker()">
+                                        <dt class="device-title">
+                                            <span class="device-name" data-value="3">CTD-S100 XL 이벤트발생</span>
+                                            <span class="device-serial">S/N : Asset02-123</span>
+                                        </dt>
+                                        <dd class="device-address">서울시 동작구 등용로4길 139 KT동작지사</dd>
+                                        <dd class="device-date">
+                                            <span class="device-time">2017.08.22 18:20:45</span>
+                                            <span class="device-battery" data-value="0">0%</span>
+                                        </dd>
+                                    </dl>
+                                    <button onclick="goPage('m02000001.html','_blank', 1280, 800)" type="button" class="btn btn-link">상세보기</button>
+                                </div>
+								<div class="device-item" tabindex="0" onclick="goPage('m02000001.html','_blank', 1280, 800)">
+                                    <dl tabindex="0" onclick="marker()">
+                                        <dt class="device-title">
+                                            <span class="device-name" data-value="4">CTD-S100 XL 지오펜스이벤트</span>
+                                            <span class="device-serial">S/N : Asset02-123</span>
+                                        </dt>
+                                        <dd class="device-address">서울시 동작구 등용로4길 139 KT동작지사</dd>
+                                        <dd class="device-date">
+                                            <span class="device-time">2017.08.22 18:20:45</span>
+                                            <span class="device-battery" data-value="1">0%</span>
+                                        </dd>
+                                    </dl>
+                                    <button onclick="goPage('m02000001.html','_blank', 1280, 800)" type="button" class="btn btn-link">상세보기</button>
+                                </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="title">
                                 <div class="asset-thum"><img src="../img/list_thum.png" alt=""></div>
                                 <div class="asset-title" data-value="1">Asset Name Asset</div>
-                                <div class="asset-mapping">3개</div>
+                                <div class="asset-mapping">2개</div>
                                 <div class="asset-check"><input class="check-interest" type="checkbox" id=""></div>
                             </div>
                             <div class="content">
@@ -257,7 +286,7 @@
                             <div class="title">
                                 <div class="asset-thum"><img src="../img/list_thum.png" alt=""></div>
                                 <div class="asset-title" data-value="2">Asset Name Asset</div>
-                                <div class="asset-mapping">3개</div>
+                                <div class="asset-mapping">1개</div>
                                 <div class="asset-check"><input class="check-interest" type="checkbox" id=""></div>
                             </div>
                             <div class="content">
@@ -280,7 +309,7 @@
                         <div class="item">
                             <div class="title">
                                 <div class="asset-thum"><img src="../img/list_thum.png" alt=""></div>
-                                <div class="asset-title" data-value="0">Asset Name Asset</div>
+                                <div class="asset-title" data-value="3">Asset Name Asset</div>
                                 <div class="asset-mapping">3개</div>
                                 <div class="asset-check"><input class="check-interest" type="checkbox" id=""></div>
                             </div>
@@ -604,13 +633,15 @@
                 </div>
 
             </div>
+
             <div class="footer">
                 전체대상 40개 / 결과 20개
             </div>
         </div>
 
-    </div>
-</div>
+    </div><!--.content-->
+
+</div><!--.wrap-->
 
 
 <script>
