@@ -5738,7 +5738,9 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .geopence-target-area .item ul li:nth-child(n+3) { font-size: 13px; color: #9c9b9b; }
 
-.marker-dialog { padding: 20px; }
+.marker-dialog { padding: 10px; }
+
+.marker-dialog .footer{padding-top:10px;}
 
 .marker-dialog:after { content: ''; position: absolute; bottom: -20px; left: 50%; margin-left: -15px; border: 10px solid transparent; border-top-color: #162232; }
 
@@ -5764,7 +5766,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .marker-dialog .body dd { color: #b5b5b5; }
 
-.marker-dialog dt { line-height: 1.7; }
+.marker-dialog dt { line-height: 1.5; }
 
 .marker-dialog dd { line-height: 1.5; margin: 5px 0; }
 
@@ -5892,9 +5894,9 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .asset-check > * { z-index: 10; position: absolute; top: 14px; left: 12px; }
 
-#monitoring-list .item dt { line-height: 1.7; }
+#monitoring-list .item dt { line-height: 1.5; }
 
-#monitoring-list .item dd { line-height: 1.5; margin: 5px 0; }
+#monitoring-list .item dd { line-height: 1.3; margin: 5px 0; }
 
 #monitoring-list .item .device-title { /*display: -ms-flexbox; display: flex;*/ font-weight: 400; text-indent: 20px; }
 
@@ -5926,7 +5928,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .device-wifi { border-left: 1px solid #444; padding-left: 10px; margin-left: 10px; }
 
-#monitoring-list .item .device-item { position: relative; padding: 10px 15px 10px 20px; margin-bottom: 0; border-bottom: 1px solid #d2d2d2; }
+#monitoring-list .item .device-item { position: relative; padding: 8px 15px 5px 20px; margin-bottom: 0; border-bottom: 1px solid #d2d2d2; }
 
 #monitoring-list .item .device-item .device-title span{display:block;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
@@ -5944,11 +5946,11 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .device-item dd{overflow:hidden;color:#787878;text-overflow:ellipsis;white-space:nowrap;}
 
-#monitoring-list .item .device-item .btn { position: absolute; right: 15px; bottom: 15px; }
+#monitoring-list .item .device-item .btn { position: absolute; right: 15px; bottom: 8px; }
 
 #monitoring-list .item .device-item .btn:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: ""; display: inline-block; font-size: 12px; padding-left: 4px; position: relative; top: -1px; }
 
-#monitoring-list .item .device-item .btn-od{bottom:auto;top:15px;background-color:#cdcdcd;}
+#monitoring-list .item .device-item .btn-od{bottom:auto;top:10px;background-color:#cdcdcd;}
 
 #monitoring-list .item .device-item .btn-od:hover{background-color:#f1f1f1;}
 
