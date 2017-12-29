@@ -5740,6 +5740,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .marker-dialog { padding: 10px; }
 
+.marker-dialog .btn-close{top:5px;right:5px;}
+
 .marker-dialog .footer{padding-top:10px;}
 
 .marker-dialog:after { content: ''; position: absolute; bottom: -20px; left: 50%; margin-left: -15px; border: 10px solid transparent; border-top-color: #162232; }
