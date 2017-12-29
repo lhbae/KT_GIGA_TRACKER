@@ -77,31 +77,41 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <label for="" class="required">모바일번호</label>
-                        <input type="search" class="form-control" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 form-inline">
-                        <label for="" class="required">이메일</label>
-                        <div class="form-email ml-0">
-                            <input type="search" class="form-control" required>
-                            <span>@</span>
-                            <input type="search" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 form-inline">
-                        <label for="" class="required">사용일</label>
-                        <div class="form-date ml-0">
-                            <input type="search" class="form-control" required>
-                            <span>~</span>
-                            <input type="search" class="form-control" required>
-                        </div>
-                    </div>
-                </div>
+                    <div class="col-6 rowBlock">
+						<div class="row">
+							<label for="" class="required">모바일번호</label>
+							<input type="search" class="form-control" required>
+						</div>
+						<div class="row form-inline">
+							<label for="" class="required">이메일</label>
+							<div class="form-email ml-0">
+								<input type="search" class="form-control" required>
+								<span>@</span>
+								<input type="search" class="form-control" required>
+							</div>
+						</div>
+						<div class="row form-inline">
+							<label for="" class="required">사용일</label>
+							<div class="form-date ml-0">
+								<input type="search" class="form-control" required>
+								<span>~</span>
+								<input type="search" class="form-control" required>
+							</div>
+						</div>
+					</div><!--.col-6-->
+					<div class="col-6 rowBlock">
+						<div class="row">
+							<div class="col">
+								<label for="" class="mt-3">알림수신</label>
+								<div class="checkbox-list">
+									<input type="checkbox" id="" name="checkbox-sensor" checked><label for="">SMS</label><br>
+									<input type="checkbox" id="" name="checkbox-sensor"><label for="">PUSH</label><br>
+									<input type="checkbox" id="" name="checkbox-sensor"><label for="">EMAIL</label><br>
+								</div>
+							</div>
+						</div><!--.row-->
+					</div><!--.col-6-->
+				</div>
                 <div class="row">
                     <div class="col-6">
                         <label for="" class="required">ID상태</label>
