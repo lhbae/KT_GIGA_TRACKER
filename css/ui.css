@@ -5910,9 +5910,11 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item [data-value="2"] { background-image: url(../img/ico_check_off.png); }
 
-#monitoring-list .item [data-value="3"] { background-image: url(../img/ico_check_evt.png); }
+#monitoring-list .item [data-value="3"] { background-image: url(../img/ico_check_bttry.png); }
 
 #monitoring-list .item [data-value="4"] { background-image: url(../img/ico_check_geo.png); }
+
+#monitoring-list .item [data-value="5"] { background-image: url(../img/ico_check_evt.png); }
 
 #monitoring-list .item .device-battery { background: 0 50% no-repeat; padding-left: 30px; margin-left: 10px; font-size: 1.2rem; }
 
