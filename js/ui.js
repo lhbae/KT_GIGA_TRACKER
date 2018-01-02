@@ -26,11 +26,11 @@ var ui = {
 
             $(window).on('resize', jqgridResize);
 
-            $( ".tabs" ).tabs({
+            /*$( ".tabs" ).tabs({
                 activate: function() {
                     jqgridResize();
                 }
-            });
+            });*/
 
             var layout = {
                 init: function () {
