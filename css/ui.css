@@ -5952,9 +5952,9 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .device-item .btn:after { display: inline-block; font: normal normal normal 14px/1 FontAwesome; font-size: inherit; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; content: ""; display: inline-block; font-size: 12px; padding-left: 4px; position: relative; top: -1px; }
 
-#monitoring-list .item .device-item .btn-od{bottom:auto;top:10px;background-color:#cdcdcd;}
+#monitoring-list .item .device-item .btn-od{bottom:auto;top:10px;color:#fff;background-color:#34536c;}
 
-#monitoring-list .item .device-item .btn-od:hover{background-color:#f1f1f1;}
+#monitoring-list .item .device-item .btn-od:hover{background-color:#2bb7b3;}
 
 .monitoring-detail { display: block !important; }
 
