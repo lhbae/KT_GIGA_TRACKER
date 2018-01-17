@@ -43,7 +43,16 @@ var ui = {
                     $('.btn-menu').on('click', this.sidebarToggle);
                     // 대시보드일때 사이드바 숨김
                     if (activeId !== 'm01000000') return;
-                    $('#sidebar .btn-menu').trigger('click');
+                    //$('#sidebar .btn-menu').trigger('click');
+					var x = $('#sidebar .btn-menu').hasClass('active');
+                    $('.btn-menu').toggleClass('active');
+                    $('#header .btn-menu').toggle();
+                    $('#sidebar').stop().animate({left: x ? 0 : -200}, 0);
+                    $('body').stop().animate({paddingLeft: x ? 200 : 0}, 0);
+                    $('#header').stop().animate({left: x ? 200 : 0}, 0);
+
+                    jqgridResize();
+					
                 },
                 zoom: function () {
                     $(window).resize(function () {
