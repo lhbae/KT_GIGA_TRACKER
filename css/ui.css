@@ -4615,9 +4615,9 @@ input[type="search"] { -webkit-appearance: searchfield; -moz-appearance: searchf
 
 .asset-check { /*체크시*/ /*포커스*/ /*클릭시*/ }
 
-.asset-check .custom-control-indicator { border: 0; border-radius: 0; background: url(../img/ico_star_check.png) 50% no-repeat; }
+.asset-check .custom-control-indicator { border: 0; border-radius: 0; background: url(../img/ico_star.png) 50% no-repeat; }
 
-.asset-check .custom-control-input:checked ~ .custom-control-indicator { background-color: transparent; background-image: url(../img/ico_star.png) !important; }
+.asset-check .custom-control-input:checked ~ .custom-control-indicator { background-color: transparent; background-image: url(../img/ico_star_check.png) !important; }
 
 .asset-check .custom-control-input:focus ~ .custom-control-indicator { box-shadow: none; }
 
