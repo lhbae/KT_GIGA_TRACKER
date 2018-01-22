@@ -4592,7 +4592,7 @@ input[type="search"] { -webkit-appearance: searchfield; -moz-appearance: searchf
 
 [type="checkbox"]:checked { border-color: transparent; background-color: #2bb7b3; background-image: url(../img/ico_checked.png); }
 
-.custom-control { width: 21px; height: 18px; padding-left: 0; }
+.custom-control { width: 18px; height: 18px; padding-left: 0; }
 
 .table-header .left { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
 
