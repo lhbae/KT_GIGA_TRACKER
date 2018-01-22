@@ -4592,7 +4592,7 @@ input[type="search"] { -webkit-appearance: searchfield; -moz-appearance: searchf
 
 [type="checkbox"]:checked { border-color: transparent; background-color: #2bb7b3; background-image: url(../img/ico_checked.png); }
 
-.custom-control { width: 18px; height: 18px; padding-left: 0; }
+.custom-control { width: 20px; height: 18px; padding-left: 0; }
 
 .table-header .left { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; }
 
@@ -4607,9 +4607,9 @@ input[type="search"] { -webkit-appearance: searchfield; -moz-appearance: searchf
 /*포커스*/
 .custom-control-input:focus ~ .custom-control-indicator { box-shadow: none; }
 
-.check-interest { border: 0; border-radius: 0; background: url(../img/ico_star_check.png) 50% no-repeat; width: 18px; height: 18px; }
+.check-interest { border: 0; border-radius: 0; background: url(../img/ico_star.png) 50% no-repeat; width: 18px; height: 18px; }
 
-.check-interest:checked { background-color: transparent; background-image: url(../img/ico_star.png); }
+.check-interest:checked { background-color: transparent; background-image: url(../img/ico_star_check.png); }
 
 .asset-check { /*체크시*/ /*포커스*/ /*클릭시*/ }
 
