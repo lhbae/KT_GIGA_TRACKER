@@ -4588,7 +4588,7 @@ input[type="search"] { -webkit-appearance: searchfield; -moz-appearance: searchf
 
 [type="radio"]:checked { background-image: url(../img/ico_radio_checked.png); }
 
-[type="checkbox"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 18px; height: 18px; border: 2px solid #d2d2d2; border-radius: 2px; padding-left: 15px !important; transition: all .2s; background: #fff 50% no-repeat; }
+[type="checkbox"] { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 18px; height: 18px; border: 2px solid #d2d2d2; border-radius: 2px; padding-left: 14px !important; transition: all .2s; background: #fff 50% no-repeat; }
 
 [type="checkbox"]:checked { border-color: transparent; background-color: #2bb7b3; background-image: url(../img/ico_checked.png); }
 
