@@ -23,15 +23,19 @@
 
             <div class="content-header">
                 <h2></h2>
+				<div class="table-header">
+					<div class="input-group">
+						<span class="input-group-addon ico-search"></span>
+						<input class="form-control" type="text" placeholder="제목을 입력해주세요">
+						<span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
+					</div>
+				</div>
             </div>
 
             <div class="table-header justify-content-between">
                 <div class="left">
-                    <div class="input-group">
-                        <span class="input-group-addon ico-search"></span>
-                        <input class="form-control" type="text" placeholder="제목을 입력해주세요">
-                        <span class="input-group-btn"> <button class="btn btn-secondary" type="button">검색</button> </span>
-                    </div>
+                    <span class="counter">0/25</span>
+                    <button type="button" onClick="checkPopup('del');" class="btn btn-del">삭제</button>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="goPage('m09020003.html')">1:1문의 등록</button>
             </div>
@@ -67,13 +71,14 @@
             shrinkToFit: true,
             height: 480,
             loadtext: '로딩중...',
+			multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
             sortname: 'idx',
             sortorder: "desc",
             sortable: true,
             rowNum: 10,
             colNames: ["번호", "제목", "첨부파일", "작성자", "작성일"],
             colModel: [
-                {name: "", align: "center", width: 20},
+                {name: "idx", align: "center", width: 20},
                 {
                     name: "deptNm", align: "left", formatter: function (val) {
                     return '<a href="m09020001.html">' + val + '</a>'
