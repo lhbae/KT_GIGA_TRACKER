@@ -66,7 +66,6 @@
                 <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
             </ul>
 
-
         </div>
     </div>
 </div>
@@ -87,7 +86,7 @@
             sortorder: "desc",
             sortable: true,
             rowNum: 10,
-            colNames: ["단말 모델명", "단말IMEI", "단말타입", "펌웨어버전", "단말상태", "개통일자", "등록일자", "매핑대상명", "대상번호", "소속그룹", "관리자명", "최종매핑날짜"],
+            colNames: ["단말 모델명", "단말IMEI", "단말타입", "펌웨어버전", "단말상태", "개통일자", "등록일자", "매핑대상명", "대상번호", "소속그룹", "관리자명", "최종매핑날짜", "단말이력"],
             colModel: [
                 {
                     name: "hndsetModelNm", align: "center", formatter: function (val) {
@@ -104,7 +103,12 @@
                 {name: "", align: "center"},
                 {name: "", align: "center"},
                 {name: "", align: "center"},
-                {name: "", align: "center"}
+                {name: "", align: "center"},
+				{
+					name: "", align: "center", formatter: function () {
+                    return '<button type="button" class="btn btn-link" onclick="deviceHistory();">이력</button>'
+					}
+				}
             ]
         })
     }

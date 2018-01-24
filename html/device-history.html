@@ -1,0 +1,93 @@
+<div class="dialog" id="device-history" title="단말 이력">
+
+    <h4 class="mb-4">KT단말10 (A-Type)</h4>
+
+    <div class="table-header mt-0">
+        <div class="form-inline">
+			<label for="" hidden>기간검색</label>
+			<input type="text" class="datepicker form-control ml-0">
+			<span>~</span>
+			<input type="text" class="datepicker form-control">
+			<button type="button" class="btn btn-primary ico-search"><span class="sr-only">검색</span></button>
+			<select class="form-control" name="" id="">
+				<option value="">이벤트 전체</option>
+				<option value="">정상</option>
+				<option value="">지오펜스</option>
+				<option value="">배터리경보</option>
+			</select>
+		</div>
+    </div>
+
+    <hr>
+
+    <div class="table-header justify-content-between">
+        <div class="left">
+            <span class="counter ml-0">전체<span>25</span>개</span>
+        </div>
+        <div class="right">
+            <button type="button" class="btn btn-primary">목록다운받기</button>
+        </div>
+    </div>
+	
+	<table id="device-history-table"></table>
+
+    <ul class="pagination">
+        <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+        <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+        <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+    </ul>
+
+    <!-- 단말리스트 -->
+</div>
+
+<script>
+    function deviceHistoryOpen() {
+        $('#device-history').dialog({
+            autoOpen: true,
+            modal: true,
+            width: 1600,
+            height: 900,
+            dialogClass: 'device-history',
+            open: function () {
+                $("#device-history-table").jqGrid({
+                    url: '../js/device.json',
+                    datatype: "json",
+                    width: 100,
+                    height: 480,
+                    autowidth: true,
+                    shrinkToFit: true,
+                    loadtext: '로딩중...',
+                    multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+                    sortname: 'idx',
+                    sortorder: "desc",
+                    sortable: true,
+//                    scrollerbar:true,
+                    rowNum: 10,
+                    colNames: ["순번", "회사명", "소속그룹", "매핑대상명", "대상번호", "데이터수집시간", "서버수신시간", "이벤트명", "통신주기(min.)", "전송주기(min.)", "배터리(%)", "충격 (G)", "속도(km)", "온도(℃)", "습도(%)", "위/경도"],
+                    colModel: [
+                        {name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "hndsetModelNm", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"},
+						{name: "", align: "center"}
+                    ]
+                });
+            }
+        });
+    }
+</script>

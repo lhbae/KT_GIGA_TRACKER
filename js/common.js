@@ -731,6 +731,19 @@ function assetTypeMod(idx) {
     });
 }
 
+// 단말관리 : 단말 이력 팝업
+function deviceHistory() {
+    $.ajax({
+        url: '../html/device-history.html',
+        dataType: 'html',
+        cache: false
+    }).done(function (data) {
+        if ($('#device-history').length) return;
+        $('body').append(data);
+    }).complete(function () {
+        deviceHistoryOpen();
+    });
+}
 
 // 관리자 : 상위메뉴 조회
 function topmenuSearch() {
