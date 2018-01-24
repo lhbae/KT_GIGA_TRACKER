@@ -1,8 +1,8 @@
 <div class="dialog" id="device-history" title="단말 이력">
 
-    <h4 class="mb-4">KT단말10 (A-Type)</h4>
+    <h4>KT단말10 (A-Type)</h4>
 
-    <div class="table-header mt-0">
+    <div class="table-header">
         <div class="form-inline">
 			<label for="" hidden>기간검색</label>
 			<input type="text" class="datepicker form-control ml-0">
@@ -61,9 +61,10 @@
                     autowidth: true,
                     shrinkToFit: true,
                     loadtext: '로딩중...',
-                    sortname: 'idx',
-                    sortorder: "desc",
-                    sortable: true,
+//					  multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+//                    sortname: 'idx',
+//                    sortorder: "desc",
+//                    sortable: true,
 //                    scrollerbar:true,
                     rowNum: 10,
                     colNames: ["순번", "회사명", "소속그룹", "매핑대상명", "대상번호", "데이터수집시간", "서버수신시간", "이벤트명", "통신주기(min.)", "전송주기(min.)", "배터리(%)", "충격 (G)", "속도(km)", "온도(℃)", "습도(%)", "위/경도"],
