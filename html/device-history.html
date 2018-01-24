@@ -86,7 +86,16 @@
 						{name: "", align: "center"}
                     ]
                 });
-            }
+            },
+			buttons: {
+				"닫기": {
+					'class': 'btn btn-secondary',
+					'text': '닫기',
+					click: function () {
+						$(this).dialog("close");
+					}
+				}
+			}
         });
     }
 </script>
