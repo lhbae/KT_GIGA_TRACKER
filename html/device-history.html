@@ -45,13 +45,19 @@
 </div>
 
 <script>
+	//ie에서 dialog 위의 datepicker가 닫히지 않는 문제
+	function isIE(){
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE");
+		if(msie > 0)
+		return true;
+		else
+		return false;
+	}
     function deviceHistoryOpen() {
         $('#device-history').dialog({
             autoOpen: true,
             modal: true,
-			focus: function(event, ui) { 
-				$('input:visible:first-child' , $(this)).blur(); 
-			},
             width: 1600,
             height: 900,
             dialogClass: 'device-history',
@@ -93,7 +99,23 @@
 				$(".datepicker").datepicker({
 					dateFormat:'yy-mm-dd',
 					numberOfMonths:1,
-				});
+					//ie에서 dialog 위의 datepicker가 닫히지 않는 문제
+					//fix buggy IE focus functionality
+				    fixFocusIE: false,    
+					onSelect: function(dateText, inst) {
+						this.fixFocusIE = true;
+						$(this).change().focus();
+					},
+					onClose: function(dateText, inst) {
+						this.fixFocusIE = true;
+						this.focus();
+					},
+					beforeShow: function(input, inst) {
+						var result = isIE ? !this.fixFocusIE : true;                      
+						this.fixFocusIE = false;                      
+						return result;
+					}
+				}).click(function(){$(this).focus()});
             },
 			buttons: {
 				"닫기": {
