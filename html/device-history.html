@@ -99,24 +99,20 @@
 			}
         });
 		
-		$(".datepicker").datepicker({
-			dateFormat:'yy-mm-dd',
-			numberOfMonths:1,
-		});
-    }
-	
-	/*function isIE(){
+		function isIE(){
 		var ua = window.navigator.userAgent;
 		var msie = ua.indexOf("MSIE");
 		if(msie > 0)
 			return true;
 		else
 			return false;
-	}*/
-	$(".datepicker").datepicker(
-		//ie에서 dialog 위의 datepicker가 닫히지 않는 문제
-		{
-           //fix buggy IE focus functionality
+		}
+		
+		$(".datepicker").datepicker({
+			dateFormat:'yy-mm-dd',
+			numberOfMonths:1,
+			//ie에서 dialog datepicker가 reopen 되는 버그
+			//fix buggy IE focus functionality
            fixFocusIE: false,    
             onSelect: function(dateText, inst) {
                   this.fixFocusIE = true;
@@ -132,5 +128,5 @@
                   return result;
             }
 		}).click(function(){$(this).focus()});
-	);
+    }
 </script>
