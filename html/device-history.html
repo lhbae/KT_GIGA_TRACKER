@@ -49,6 +49,9 @@
         $('#device-history').dialog({
             autoOpen: true,
             modal: true,
+			focus: function(event, ui) { 
+				$('input:visible:first-child' , $(this)).blur(); 
+			},
             width: 1600,
             height: 900,
             dialogClass: 'device-history',
