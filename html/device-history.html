@@ -87,6 +87,10 @@
 						{name: "", align: "center"}
                     ]
                 });
+				$(".datepicker").datepicker({
+					dateFormat:'yy-mm-dd',
+					numberOfMonths:1,
+				});
             },
 			buttons: {
 				"닫기": {
@@ -100,10 +104,4 @@
         });
 		
     }
-	
-	$(".datepicker").datepicker({
-		dateFormat:'yy-mm-dd',
-		numberOfMonths:1,
-	});
-	
 </script>
