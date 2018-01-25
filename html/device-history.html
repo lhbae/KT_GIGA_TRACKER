@@ -97,36 +97,38 @@
 					}
 				}
 			}
-        });
+        });		
 		
-		function isIE(){
+    }
+	
+	function isIE(){
 		var ua = window.navigator.userAgent;
 		var msie = ua.indexOf("MSIE");
 		if(msie > 0)
 			return true;
 		else
 			return false;
-		}
+	}
 		
-		$(".datepicker").datepicker({
-			dateFormat:'yy-mm-dd',
-			numberOfMonths:1,
-			//ie에서 dialog datepicker가 reopen 되는 버그
-			//fix buggy IE focus functionality
-           fixFocusIE: false,    
-            onSelect: function(dateText, inst) {
-                  this.fixFocusIE = true;
-                        $(this).change().focus();
-            },
-            onClose: function(dateText, inst) {
-                  this.fixFocusIE = true;
-                  this.focus();
-            },
-            beforeShow: function(input, inst) {
-                  var result = $.browser.msie ? !this.fixFocusIE : true;
-                  this.fixFocusIE = false;
-                  return result;
-            }
-		}).click(function(){$(this).focus()});
-    }
+	$(".datepicker").datepicker({
+		dateFormat:'yy-mm-dd',
+		numberOfMonths:1,
+		//ie에서 dialog datepicker가 reopen 되는 버그
+		//fix buggy IE focus functionality
+	   fixFocusIE: false,    
+		onSelect: function(dateText, inst) {
+			  this.fixFocusIE = true;
+					$(this).change().focus();
+		},
+		onClose: function(dateText, inst) {
+			  this.fixFocusIE = true;
+			  this.focus();
+		},
+		beforeShow: function(input, inst) {
+			  var result = $.browser.msie ? !this.fixFocusIE : true;
+			  this.fixFocusIE = false;
+			  return result;
+		}
+	}).click(function(){$(this).focus()});
+	
 </script>
