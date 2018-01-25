@@ -4576,7 +4576,7 @@ label { margin-bottom: 0; }
 
 .datepicker { background: #fff url(../img/ico_calendar.png) 96% 50% no-repeat; }
 
-.ui-datepicker { background-color: #fff; border: 1px solid #ddd; border-radius: 5px; z-index: 10 !important; }
+.ui-datepicker { background-color: #fff; border: 1px solid #ddd; border-radius: 5px; /*z-index: 10 !important;*/ }
 
 input { vertical-align: middle; }
 
