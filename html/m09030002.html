@@ -29,19 +29,24 @@
                 <div class="row">
                     <div class="col-12">
                         <label for="" class="required">질문</label>
-                        <input type="search" class="form-control" required>
+                        <input type="search" value="질문제목" class="form-control" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
                         <label for="" class="required">답변</label>
-                        <textarea name="" id="" cols="60" rows="10" class="form-control" required></textarea>
+                        <textarea name="" id="" cols="60" rows="10" class="form-control" required>답변내용</textarea>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6">
-                        <label for="" class="">첨부파일</label>
-                        <input type="file" class="form-control">
+                    <div class="col-6 align-items-start">
+                        <label for="" class="mt-0">첨부파일<button type="button" class="btn btn-add"><i class="fa fa-plus-circle"></i></button></label>
+                        <div class="fileList">
+							<ul>
+								<li><input type="file" class="form-control"> <button type="button" class="btn btn-del">삭제</button></li>
+								<li><input type="file" class="form-control"> <button type="button" class="btn btn-del">삭제</button></li>
+							</ul>
+						</div>
                     </div>
                 </div>
 
