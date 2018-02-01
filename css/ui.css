@@ -6320,7 +6320,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .ui-jqgrid .fa-cloud-download{color:#777;}
 .ui-jqgrid .fileDown:hover .fa-cloud-download{color:#22928f;}
-.fileList a{display:block;position:relative;overflow:hidden;margin-bottom:5px;padding-right:30px;text-align:left;text-overflow:ellipsis;line-height:36px;white-space:nowrap;cursor:pointer;}
+.fileList a{display:block;position:relative;overflow:hidden;margin-bottom:5px;padding-right:30px;text-align:left;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;}
 .fileList a:hover{color:#222;border-color:#22928f;text-decoration:none;}
 .fileList a i{position:absolute;top:10px;right:8px;color:#777;font-size:1.5em;}
 .fileList a:hover i{color:#22928f;}
