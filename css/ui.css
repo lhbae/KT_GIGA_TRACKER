@@ -6333,7 +6333,6 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .fileList li{clear:both;}
 .fileList li *{display:inline-block;vertical-align:middle;}
 .fileList li .btn-del{margin-top:5px;}
-.fileList li .btn-del:active{background-color:transparent;}
 .fileList .custom-control{margin-right:5px;}
 
 .loadArea{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.6);z-index:9999;}
