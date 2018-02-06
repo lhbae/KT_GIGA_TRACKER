@@ -5321,7 +5321,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #header .logo { display: block; float: left; }
 
-#header .logo a { display: block; width: 300px; height: 52px; background: url(../img/logo.png) 0 50% no-repeat; }
+#header .logo a { display: block; width: 165px; height: 52px; background: url(../img/logo.png) 0 50% no-repeat; }
 
 #header .location { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; font-size: 1.6rem; }
 
@@ -6180,7 +6180,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #login address { position: absolute; bottom: 28px; font-size: 12px; color: #fff; display: block; }
 
-.login-copy { background: url(../img/login_copy.png) 0 0 no-repeat; width: 490px; height: 165px; position: absolute; top: 254px; left: 0; }
+.login-copy { background: url(../img/login_copy.png) 0 0 no-repeat; width: 490px; height: 193px; position: absolute; top: 254px; left: 0; }
 
 .login-form { position: absolute; top: 0; right: 0; width: 417px; height: 100vh; background-color: #fff; padding: 252px 58px 0; }
 
