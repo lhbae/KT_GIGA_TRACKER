@@ -5198,13 +5198,13 @@ table .btn { font-size: 13px !important; height: auto; }
 
 .form-map-search > * { border: 0; }
 
-.form-map-list { position: absolute; top: 53px; left: 26px; width: 259px; background-color: #fff; }
+.form-map-list { position: absolute; top: 53px; left: 26px;bottom:10px;width: 259px; background-color: #fff; }
 
 .form-map-list > .title { color: #fff; background-color: #959595; text-align: center; padding: 8px; font-size: 14px; }
 
 .form-map-list > .title .btn-close { right: 0; top: 5px; opacity: 1; border-radius: 0; background-color: transparent; }
 
-.form-map-list .list { margin-top: -1px; }
+.form-map-list .list { ;margin-top: -1px; }
 
 .form-map-list .pagination { padding: 6px 0; border-top: 1px solid #efefef; }
 
@@ -6345,6 +6345,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .loadArea.backNone{background-color:transparent;}
 .loadArea.backNone .load p{color:#fff;text-shadow:0 0 5px rgba(0,0,0,0.7);}
 .loader{border:16px solid #3a3f4f;border-top:16px solid #2bb7b3;border-radius:50%;width:100px;height:100px;animation:spin 2s linear infinite;}
+
 
 @keyframes spin{
    0%{transform:rotate(0deg);}
