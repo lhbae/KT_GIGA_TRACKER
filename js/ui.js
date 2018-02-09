@@ -122,8 +122,7 @@ var ui = {
                     items.push('<div id="sidebar">');
                     items.push('<button type="button" class="btn btn-menu"><span class="sr-only">사이드메뉴 닫기</span></button>');
                     items.push('<div class="account">');
-					items.push('<div>');
-                    items.push('<img src=' + (company ? "../../img/user.png" : "../img/user.png") + ' alt="">');
+                    items.push('<div>'+'<img src=' + (company ? "../../img/user.png" : "../img/user.png") + ' alt="">'+'</div>');
                     items.push('<div class="id">' +
                         '<a href="#none" class="title"><span>홍길동님</span><i class="fa fa-caret-down" aria-hidden="true"></i></a>' +
                         '<div class="content"><ul>' +
