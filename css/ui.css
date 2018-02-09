@@ -6321,6 +6321,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .rowBlock .row:last-child{margin-bottom:0;}
 .rowBlock .col{padding-left:0;}
 .rowBlock .col>label{align-self:start !important;}
+.geoSrchList{position:absolute;top:0;left:0;right:0;bottom:0;overflow:hidden;}
 
 .ui-jqgrid .fa-cloud-download{color:#777;}
 .ui-jqgrid .fileDown:hover .fa-cloud-download{color:#22928f;}
