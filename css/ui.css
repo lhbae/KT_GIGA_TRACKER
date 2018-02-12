@@ -5192,7 +5192,7 @@ table .btn { font-size: 13px !important; height: auto; }
 
 .flex-column > label input { margin-right: 6px; }
 
-.map-search-area .map { height: 60vh; }
+.map-search-area .map { height: 570px; }
 
 .form-map-search { position: absolute; top: 10px; left: 25px; width: 260px; box-shadow: -2.6px 1.5px 4.7px 0.3px rgba(0, 0, 0, 0.24); }
 
