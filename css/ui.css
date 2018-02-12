@@ -5198,7 +5198,7 @@ table .btn { font-size: 13px !important; height: auto; }
 
 .form-map-search > * { border: 0; }
 
-.form-map-list { position: absolute; top: 53px; left: 26px;bottom:10px;width: 259px; background-color: #fff; }
+.form-map-list { position: absolute; top: 53px; left: 26px;bottom:10px;overflow:hidden;width:259px; background-color: #fff; }
 
 .form-map-list > .title { color: #fff; background-color: #959595; text-align: center; padding: 8px; font-size: 14px; }
 
