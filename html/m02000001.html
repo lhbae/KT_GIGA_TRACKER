@@ -358,8 +358,8 @@
                     case '기타' : icon = 'ET'; break;
                     default : icon = ''; break;
                 }
-				console.log(v[0] + "||" + v[1]);
-                element.html(v[0] + '<span class="">' + v[1] + '</span>').attr({"data-icon": icon});
+
+                element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
             } else {
                 element.html("&#160;");
             }
