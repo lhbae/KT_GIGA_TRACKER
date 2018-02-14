@@ -330,6 +330,8 @@
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
     }
 
+	$("#select-event-log").selectmenu({ change: function( event, ui ) { alert('x'); }});
+
     $.widget("custom.iconselectmenu", $.ui.selectmenu, {
         _renderItem: function (ul, item) {
             var li = $("<li>"),
