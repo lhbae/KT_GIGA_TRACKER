@@ -5642,11 +5642,11 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .tracking-area .header { height: 230px; color: #3b3b3b; }
 
-.tracking-area .header > div { position: absolute; text-align: center; width: 100%; line-height: 1; }
+.tracking-area .header > div {position:absolute;text-align:center;line-height:1;}
 
-.tracking-area .header .title { top: 60px; font-size: 16px; }
+.tracking-area .header .title {top:20px;left:20px;right:20px;font-size:16px;}
 
-.tracking-area .header .value { top: 86px; font-size: 36px; }
+.tracking-area .header .value {top:70px;width:100%;font-size:36px;}
 
 .tracking-area .header .value small { font-size: 16px; }
 
@@ -5880,7 +5880,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item .title { min-height: 68px; padding: 10px 15px 10px 30px; display: table; font-size: 16px; }
 
-#monitoring-list .item .title > div { display: table-cell; vertical-align: middle; }
+#monitoring-list .item .title > div {display:table-cell;vertical-align:middle;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 
 #monitoring-list .item .title.ui-state-active { background-color: #f9f9f9; }
 
@@ -5919,6 +5919,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 #monitoring-list .item [data-value="4"] { background-image: url(../img/ico_check_geo.png); }
 
 #monitoring-list .item [data-value="5"] { background-image: url(../img/ico_check_evt.png); }
+
+#monitoring-list .item [data-value="6"] { background-image: url(../img/ico_check_today.png); }
 
 #monitoring-list .item .device-battery { background: 0 50% no-repeat; padding-left: 30px; margin-left: 10px; font-size: 1.2rem; }
 
@@ -6347,6 +6349,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .loadArea.backNone .load p{color:#fff;text-shadow:0 0 5px rgba(0,0,0,0.7);}
 .loader{border:16px solid #3a3f4f;border-top:16px solid #2bb7b3;border-radius:50%;width:100px;height:100px;animation:spin 2s linear infinite;}
 
+.tracking-area .header .title select{float:left;width:calc(100% - 43px);}
+.tracking-area .header .title button{float:right;}
 
 @keyframes spin{
    0%{transform:rotate(0deg);}
