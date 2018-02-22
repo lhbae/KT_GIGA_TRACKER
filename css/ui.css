@@ -5646,7 +5646,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .tracking-area .header .title {top:20px;left:20px;right:20px;font-size:16px;}
 
-.tracking-area .header .value {top:70px;width:100%;font-size:36px;}
+.tracking-area .header .value {top:80px;width:100%;font-size:36px;}
 
 .tracking-area .header .value small { font-size: 16px; }
 
