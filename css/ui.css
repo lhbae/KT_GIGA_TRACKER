@@ -6351,6 +6351,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .tracking-area .header .title select{float:left;width:calc(100% - 43px);}
 .tracking-area .header .title button{float:right;}
+.tracking-area.today{background-image:url(../img/tracker_bg_today.png);}
 
 @keyframes spin{
    0%{transform:rotate(0deg);}
