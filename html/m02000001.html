@@ -186,13 +186,13 @@
             <div id="event-log">
 
                 <select name="" id="select-event-log" class="">
-                    <option data-icon="AL">전체 <span class="value">35</span></option>
-                    <option data-icon="BA">배터리경보 <span class="value">9</span></option>
-                    <option data-icon="GI">지오펜스 <span class="value">8</span></option>
-                    <option data-icon="SH">충격 <span class="value">9</span></option>
-                    <option data-icon="TM">온도 <span class="value">9</span></option>
+                    <option data-icon="AL">전체 <span class="value">85</span></option>
+                    <option data-icon="BA">배터리경보 <span class="value">2</span></option>
+                    <option data-icon="GI">지오펜스 <span class="value">5</span></option>
+                    <option data-icon="SH">충격 <span class="value">7</span></option>
+                    <option data-icon="TM">온도 <span class="value">8</span></option>
                     <option data-icon="HM">습도 <span class="value">9</span></option>
-                    <option data-icon="SP">속도 <span class="value">9</span></option>
+                    <option data-icon="SP">속도 <span class="value">10</span></option>
                     <option data-icon="ER">비상호출 <span class="value">9</span></option>
                     <option data-icon="ET">기타 <span class="value">9</span></option>
                 </select>
@@ -324,7 +324,7 @@
 </div>
 
 <script>
-	 function eventLog() {
+    function eventLog() {
         var $this = $('.event-log');
         $this.toggleClass('active');
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
@@ -358,7 +358,6 @@
                     case '기타' : icon = 'ET'; break;
                     default : icon = ''; break;
                 }
-				//alert(v[0] + "||" + v[1]);			
                 element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
             } else {
                 element.html("&#160;");
@@ -367,54 +366,6 @@
     });
 
     $("#select-event-log").iconselectmenu();
-
-    /*
-	function eventLog() {
-        var $this = $('.event-log');
-        $this.toggleClass('active');
-        $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
-    }
-
-	//$("#select-event-log").selectmenu({ change: function( event, ui ) { alert('x'); }});
-
-    $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-        _renderItem: function (ul, item) {
-            var li = $("<li>"),
-                wrapper = $("<div>", {html: item.label.split(' ')[0] + '<span class="value">' + item.label.split(' ')[1] + '</span>'})
-                    .attr({"data-icon": item.element.attr("data-icon")});
-
-            if (item.disabled) {
-                li.addClass("ui-state-disabled");
-            }
-
-            return li.append(wrapper).appendTo(ul);
-        },
-        _setText: function (element, value, i) {
-            var icon = '';
-            if (value) {
-                var v = value.split(' ');
-                switch (v[0]) {
-                    case '전체' : icon = 'AL'; break;
-                    case '배터리경보' : icon = 'BA'; break;
-                    case '지오펜스' : icon = 'GI'; break;
-                    case '충격' : icon = 'SH'; break;
-                    case '온도' : icon = 'TM'; break;
-                    case '습도' : icon = 'HM'; break;
-                    case '속도' : icon = 'SP'; break;
-                    case '비상호출' : icon = 'ER'; break;
-                    case '기타' : icon = 'ET'; break;
-                    default : icon = ''; break;
-                }
-
-                element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
-            } else {
-                element.html("&#160;");
-            }
-        }
-    });
-
-    $("#select-event-log").iconselectmenu();
-	*/
 </script>
 </body>
 </html>
