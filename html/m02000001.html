@@ -188,7 +188,7 @@
                 <select name="" id="select-event-log" class="">
                     <option data-icon="AL">전체 <span class="value"  id="span1">10</span></option>
                     <option data-icon="BA">배터리경보 <span class="value" id="span2">20</span></option>
-                    <option data-icon="GI">지오펜스 <span class="value" id="span3">30</span></option>
+                    <option data-icon="GI">지오펜스 <span class="value" id="	">30</span></option>
                     <option data-icon="SH">충격 <span class="value" id="span4">40</span></option>
                     <option data-icon="TM">온도 <span class="value" id="span5">50</span></option>
                     <option data-icon="HM">습도 <span class="value" id="span6">60</span></option>
@@ -324,7 +324,7 @@
 </div>
 
 <script>
-    function eventLog() {
+    function eventLog2132313() {
         var $this = $('.event-log');
         $this.toggleClass('active');
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
@@ -367,6 +367,8 @@
     });
 
     $("#select-event-log").iconselectmenu();
+
+
 	$(document).ready(function(){
 		$("#testButton").click(function(){
 				for(var i=0; i<9; i++){
