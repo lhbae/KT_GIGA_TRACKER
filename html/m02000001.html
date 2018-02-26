@@ -37,7 +37,7 @@
                 <span>~</span>
                 <input type="text" class="datepicker form-control">
                 <button type="button" class="btn btn-primary" onclick="eventLog();">이력조회</button>
-                <button type="button" class="btn btn-primary">경로보기</button>
+                <button type="button" class="btn btn-primary" id="testButton">경로보기</button>
             </div>
         </div>
 
@@ -186,15 +186,15 @@
             <div id="event-log">
 
                 <select name="" id="select-event-log" class="">
-                    <option data-icon="AL">전체 <span class="value">2578</span></option>
-                    <option data-icon="BA">배터리경보 <span class="value">6767</span></option>
-                    <option data-icon="GI">지오펜스 <span class="value">dfdf</span></option>
-                    <option data-icon="SH">충격 <span class="value">dssdf</span></option>
-                    <option data-icon="TM">온도 <span class="value">dfdf</span></option>
-                    <option data-icon="HM">습도 <span class="value">dfdf</span></option>
-                    <option data-icon="SP">속도 <span class="value">dffd</span></option>
-                    <option data-icon="ER">비상호출 <span class="value">ddd</span></option>
-                    <option data-icon="ET">기타 <span class="value">9</span></option>
+                    <option data-icon="AL">전체 <span class="value"  id="span1">10</span></option>
+                    <option data-icon="BA">배터리경보 <span class="value" id="span2">20</span></option>
+                    <option data-icon="GI">지오펜스 <span class="value" id="span3">30</span></option>
+                    <option data-icon="SH">충격 <span class="value" id="span4">40</span></option>
+                    <option data-icon="TM">온도 <span class="value" id="span5">50</span></option>
+                    <option data-icon="HM">습도 <span class="value" id="span6">60</span></option>
+                    <option data-icon="SP">속도 <span class="value" id="span7">70</span></option>
+                    <option data-icon="ER">비상호출 <span class="value" id="span8">80</span></option>
+                    <option data-icon="ET">기타 <span class="value"  id="span9">90</span></option>
                 </select>
 
                 <div data-scroll="true" data-height="700">
@@ -367,6 +367,15 @@
     });
 
     $("#select-event-log").iconselectmenu();
+	$(document).ready(function(){
+		$("#testButton").click(function(){
+				for(var i=0; i<9; i++){
+					var index = i+1;
+					alert(index);
+					$("#span" + index).text(index);
+				};
+		});
+	});
 </script>
 </body>
 </html>
