@@ -186,15 +186,15 @@
             <div id="event-log">
 
                 <select name="" id="select-event-log" class="">
-                    <option data-icon="AL">전체 <span class="value"  id="span1">10</span></option>
-                    <option data-icon="BA">배터리경보 <span class="value" id="span2">20</span></option>
-                    <option data-icon="GI">지오펜스 <span class="value" id="	">30</span></option>
-                    <option data-icon="SH">충격 <span class="value" id="span4">40</span></option>
-                    <option data-icon="TM">온도 <span class="value" id="span5">50</span></option>
-                    <option data-icon="HM">습도 <span class="value" id="span6">60</span></option>
-                    <option data-icon="SP">속도 <span class="value" id="span7">70</span></option>
-                    <option data-icon="ER">비상호출 <span class="value" id="span8">80</span></option>
-                    <option data-icon="ET">기타 <span class="value"  id="span9">90</span></option>
+                    <option data-icon="AL"  id="span1">10</option>
+                    <option data-icon="BA"  id="span2">20</option>
+                    <option data-icon="GI"  id="span3">30</option>
+                    <option data-icon="SH"  id="span4">40</option>
+                    <option data-icon="TM" id="span5">50</option>
+                    <option data-icon="HM"  id="span6">>60</option>
+                    <option data-icon="SP"  id="span7">70</option>
+                    <option data-icon="ER"  id="span8">80</option>
+                    <option data-icon="ET"  id="span9">90</option>
                 </select>
 
                 <div data-scroll="true" data-height="700">
@@ -373,8 +373,9 @@
 		$("#testButton").click(function(){
 				for(var i=0; i<9; i++){
 					var index = i+1;
-					alert(index);
+					alert("#span" + index);
 					$("#span" + index).text(index);
+					$("#span" + index).val(index);
 				};
 		});
 	});
