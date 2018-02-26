@@ -330,42 +330,62 @@
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
     }
 
-    $.widget("custom.iconselectmenu", $.ui.selectmenu, {
-        _renderItem: function (ul, item) {
-            var li = $("<li>"),
-                wrapper = $("<div>", {html: item.label.split(' ')[0] + '<span class="value">' + item.label.split(' ')[1] + '</span>'})
-                    .attr({"data-icon": item.element.attr("data-icon")});
+   var allCount = data.eventCount.allEvCount==null?"0":data.eventCount.allEvCount;
 
-            if (item.disabled) {
-                li.addClass("ui-state-disabled");
-            }
+ 
 
-            return li.append(wrapper).appendTo(ul);
-        },
-        _setText: function (element, value, i) {
-            var icon = '';
-            if (value) {
-                var v = value.split(' ');
-                switch (v[0]) {
-                    case '전체' : icon = 'AL'; break;
-                    case '배터리경보' : icon = 'BA'; break;
-                    case '지오펜스' : icon = 'GI'; break;
-                    case '충격' : icon = 'SH'; break;
-                    case '온도' : icon = 'TM'; break;
-                    case '습도' : icon = 'HM'; break;
-                    case '속도' : icon = 'SP'; break;
-                    case '비상호출' : icon = 'ER'; break;
-                    case '기타' : icon = 'ET'; break;
-                    default : icon = ''; break;
-                }
-                element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
-            } else {
-                element.html("&#160;");
-            }
-        }
-    });
+	var eventOption = "";
+             
+             eventOption += '<option data-icon="ALL">전체 <span class="value" id="allCount">25</span></option>'
+             +'<option data-icon="BA">배터리경보 <span class="value" >7777</span></option>'
+             +'<option data-icon="G">지오펜스 <span class="value" id="gfcCount">88</span></option>'
+             +'<option data-icon="SH">충격 <span class="value" id="shCount">99</span></option>'
+             +'<option data-icon="TM">온도 <span class="value" id="tmCount">12</span></option>'
+             +'<option data-icon="HM">습도 <span class="value" id="hmCount">67</span></option>'
+             +'<option data-icon="SP">속도 <span class="value" id="spCount">2578</span></option>'
+             +'<option data-icon="ER">비상호출 <span class="value">0</span></option>'
+             +'<option data-icon="ET">기타 <span class="value">0</span></option>'
+             $("#select-event-log").html(eventOption);
+             
+             $.widget("custom.iconselectmenu", $.ui.selectmenu, {
+                    _renderItem: function (ul, item) {
+                        var li = $("<li onclick=\"fn_searchEvent('"+item.element.attr("data-icon")+"')\">"),
+                            wrapper = $("<div>", {html: item.label.split(' ')[0] + '<span class="value">' + item.label.split(' ')[1] + '</span>'})
+                                .attr({"data-icon": item.element.attr("data-icon")});
+                        if (item.disabled) {
+                            li.addClass("ui-state-disabled");
+                        }
 
-    $("#select-event-log").iconselectmenu();
+                       return li.append(wrapper).appendTo(ul);
+                    },
+                    _setText: function (element, value, i) {
+                        var icon = '';
+                        if (value) {
+                            var v = value.split(' ');
+                            switch (v[0]) {
+                                case '전체' : icon= 'ALL'; break;
+                                case '배터리경보' : icon= 'BA'; break;
+                                case '지오펜스' : icon= 'G'; break;
+                                case '충격' : icon= 'SH'; break;
+                                case '온도' : icon= 'TM'; break;
+                                case '습도' : icon= 'HM'; break;
+                                case '속도' : icon= 'SP'; break;
+                                case '비상호출' : icon= 'ER'; break;
+                                case '기타' : icon= 'ET'; break;
+                                default : icon = ''; break;
+                            }
+
+                           element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
+                        } else {
+                            element.html("&#160;");
+                        }
+                    }
+             });
+             
+             $("#select-event-log").iconselectmenu();
+             
+             $("#select-event-log-button .ui-selectmenu-text").html('전체<span class="value">'+allCount+'</span>')
+
 </script>
 </body>
 </html>
