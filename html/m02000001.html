@@ -329,7 +329,7 @@
         $this.toggleClass('active');
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
     }
-
+				alert("0");
     $.widget("custom.iconselectmenu", $.ui.selectmenu, {
         _renderItem: function (ul, item) {
             var li = $("<li>"),
@@ -358,14 +358,25 @@
                     case '기타' : icon = 'ET'; break;
                     default : icon = ''; break;
                 }
+				alert(v[0] + "||" + v[1]);			
                 element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
+				alert("1");
             } else {
                 element.html("&#160;");
+								alert("2");
             }
         }
     });
-
+				alert("3");
     $("#select-event-log").iconselectmenu();
+				alert("4");
+	$(function(){
+		$(".btn-primary").click(function(){
+			$("#select-event-log option").text("12");
+		});
+	});
+
+
 </script>
 </body>
 </html>
