@@ -6090,10 +6090,6 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .event-log i[data-icon="GI"], .event-log i[data-icon="GO"] { background-image: url(../img/GI_S_B.png); }
 
-.event-log i[data-icon="GIIN"]{background-image: url(../img/GI_S_B_in.png);}
-
-.event-log i[data-icon="GIOUT"]{background-image: url(../img/GI_S_B_out.png);}
-
 .event-log i[data-icon="ER"] { background-image: url(../img/ER_S_B.png); }
 
 .event-log i[data-icon="BA"] { background-image: url(../img/BA_S_B.png); }
@@ -6123,6 +6119,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 #page-monitoring .ui-menu-item-wrapper, #page-monitoring .ui-selectmenu-text { background: 14px 50% no-repeat; }
 
 #page-monitoring .ui-menu-item-wrapper[data-icon="GI"], #page-monitoring .ui-menu-item-wrapper[data-icon="GO"], #page-monitoring .ui-selectmenu-text[data-icon="GI"], #page-monitoring .ui-selectmenu-text[data-icon="GO"] { background-image: url(../img/GI_B.png); }
+
+#page-monitoring .ui-menu-item-wrapper[data-icon="GIN"], #page-monitoring .ui-selectmenu-text[data-icon="GIN"]{ background-image: url(../img/GI_S_B_in.png); }
+
+#page-monitoring .ui-menu-item-wrapper[data-icon="GIO"], #page-monitoring .ui-selectmenu-text[data-icon="GIO"]{ background-image: url(../img/GI_S_B_out.png); }
 
 #page-monitoring .ui-menu-item-wrapper[data-icon="ER"], #page-monitoring .ui-selectmenu-text[data-icon="ER"] { background-image: url(../img/ER_B.png); }
 
