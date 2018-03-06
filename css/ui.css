@@ -6090,6 +6090,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .event-log i[data-icon="GI"], .event-log i[data-icon="GO"] { background-image: url(../img/GI_S_B.png); }
 
+.event-log i[data-icon="GIN"] { background-image: url(../img/GI_S_B_in.png); }
+
+.event-log i[data-icon="GIO"] { background-image: url(../img/GI_S_B_out.png); }
+
 .event-log i[data-icon="ER"] { background-image: url(../img/ER_S_B.png); }
 
 .event-log i[data-icon="BA"] { background-image: url(../img/BA_S_B.png); }
