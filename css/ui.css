@@ -6058,6 +6058,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .alarm .item[data-icon="GI"], .alarm .item[data-icon="GO"] { background-image: url(../img/GI_S.png); }
 
+.alarm .item[data-icon="GIN"]{ background-image: url(../img/GI_S_in.png); }
+
+.alarm .item[data-icon="GIO"]{ background-image: url(../img/GI_S_out.png); }
+
 .alarm .item[data-icon="ER"] { background-image: url(../img/ER_S.png); }
 
 .alarm .item[data-icon="BA"] { background-image: url(../img/BA_S.png); }
@@ -6073,6 +6077,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .toast .item { background: 5px 5px no-repeat; }
 
 .toast .item[data-icon="GI"], .toast .item[data-icon="GO"] { background-image: url(../img/GI_L.png); }
+
+.toast .item[data-icon="GIN"] { background-image: url(../img/GI_L_in.png); }
+
+.toast .item[data-icon="GIO"] { background-image: url(../img/GI_L_out.png); }
 
 .toast .item[data-icon="ER"] { background-image: url(../img/ER_L.png); }
 
