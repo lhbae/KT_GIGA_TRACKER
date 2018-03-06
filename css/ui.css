@@ -5922,6 +5922,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item [data-value="6"] { background-image: url(../img/ico_check_today.png); }
 
+#monitoring-list .item [data-value="7"] { background-image: url(../img/ico_check_geo_in.png); }
+
+#monitoring-list .item [data-value="8"] { background-image: url(../img/ico_check_geo_out.png); }
+
 #monitoring-list .item .device-battery { background: 0 50% no-repeat; padding-left: 30px; margin-left: 10px; font-size: 1.2rem; }
 
 #monitoring-list .item .device-battery[data-value="0"] { background-image: url(../img/ico_battery_empty.png); }
@@ -6085,6 +6089,10 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .event-log i { width: 20px; height: 20px; display: inline-block; margin-right: 8px; background: 50% no-repeat; }
 
 .event-log i[data-icon="GI"], .event-log i[data-icon="GO"] { background-image: url(../img/GI_S_B.png); }
+
+.event-log i[data-icon="GIIN"]{background-image: url(../img/GI_S_B_in.png);}
+
+.event-log i[data-icon="GIOUT"]{background-image: url(../img/GI_S_B_out.png);}
 
 .event-log i[data-icon="ER"] { background-image: url(../img/ER_S_B.png); }
 

@@ -189,6 +189,8 @@
                     <option data-icon="AL">전체 <span class="value">35</span></option>
                     <option data-icon="BA">배터리경보 <span class="value">9</span></option>
                     <option data-icon="GI">지오펜스 <span class="value">8</span></option>
+					<option data-icon="GIIN">지오펜스 진입<span class="value">8</span></option>
+					<option data-icon="GIOUT">지오펜스 진출<span class="value">8</span></option>
                     <option data-icon="SH">충격 <span class="value">9</span></option>
                     <option data-icon="TM">온도 <span class="value">9</span></option>
                     <option data-icon="HM">습도 <span class="value">9</span></option>
@@ -329,7 +331,7 @@
         $this.toggleClass('active');
         $this.stop().animate({right: $this.hasClass('active') ? 0 : -300}, 200);
     }
-				alert("0");
+
     $.widget("custom.iconselectmenu", $.ui.selectmenu, {
         _renderItem: function (ul, item) {
             var li = $("<li>"),
@@ -350,6 +352,8 @@
                     case '전체' : icon = 'AL'; break;
                     case '배터리경보' : icon = 'BA'; break;
                     case '지오펜스' : icon = 'GI'; break;
+					case '지오펜스진입' : icon = 'GIIN'; break;
+					case '지오펜스진출' : icon = 'GIOUT'; break;
                     case '충격' : icon = 'SH'; break;
                     case '온도' : icon = 'TM'; break;
                     case '습도' : icon = 'HM'; break;
@@ -359,16 +363,16 @@
                     default : icon = ''; break;
                 }			
                 element.html(v[0] + '<span class="value">' + v[1] + '</span>').attr({"data-icon": icon});
-				alert("1");
+
             } else {
                 element.html("&#160;");
-								alert("2");
+
             }
         }
     });
-				alert("3");
+
     $("#select-event-log").iconselectmenu();
-				alert("4");
+
 	$(function(){
 		$(".btn-primary").click(function(){
 			$("#select-event-log option").text("12");
