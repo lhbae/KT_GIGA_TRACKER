@@ -94,13 +94,13 @@
 
     deviceListDraw();
 
-	// 지역별 트래킹 통계
+	// 시군구별 데이터 현황
 	var chartAreaDetail = (function () {
 		var chart = new Highcharts.Chart(Highcharts.merge(chartBarOptions, {
 			chart: {
 				renderTo: 'areaDetail',
 				width: 850,
-				height: 490
+				height: 800
 			},
 			title: {
 				text: '',

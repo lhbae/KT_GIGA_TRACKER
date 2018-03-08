@@ -13,6 +13,7 @@
     <script src="../js/vendor.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/common.js"></script>
+	<script src="../js/stats.js"></script>
     <script>ui.menuSet("m05030001")</script>
 </head>
 <body>
@@ -39,8 +40,11 @@
 				</div>
 			</div><!--.content-header-->
 			
-			<div class="">
-				그래프
+			<div class="row">
+				<div class="chart no-margin">
+					<h4>지도 API</h4>
+					<div id="apiStats"></div>
+				</div>
 			</div>
 
 			<div class="table-header justify-content-between">
@@ -86,6 +90,50 @@
     }
 
     deviceListDraw();
+	
+	// API 요청 통계 상세
+	var chartApiStats = (function () {
+		var chart = new Highcharts.Chart(Highcharts.merge(chartAreaOptions, {
+			chart: {
+				renderTo: 'apiStats',
+				width: 1200,
+				height: 200
+			},
+			title: {
+				text: '',
+				style: {fontSize: 12, color: "#9c9b9b"},
+				x: -380,
+				y: 172
+			},
+			colors: ["#07c5c7"],
+			xAxis: {
+				categories: ['9/1', '9/2', '9/3', '9/4', '9/5', '9/6', '9/7', '9/8', '9/9', '9/10'],
+				labels: {
+					x: 0,
+					y: 30,
+					style: {color: '#9c9b9b'}
+				}
+			},
+			yAxis: {
+				min: 0,
+				max: 15,
+				labels: {
+					style: {color: '#9c9b9b'}
+				}
+			},
+			series: [{
+				name: '호출성공',
+				data: [4, 3, 2, 7, 2, 10, 6, 4, 3, 2],
+				color:'#36c398'
+				
+			},
+			{
+				name: '호출실패',
+				data: [2, 4, 1, 8, 5, 6, 1, 2, 4, 0],
+				color:'#f65161'
+			}]
+		}));
+	})();
 </script>
 </body>
 </html>

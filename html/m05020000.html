@@ -58,7 +58,7 @@
 			</div><!--.table-header-->
 
 			<div class="row">
-				<div class="chart">
+				<div class="chart no-margin">
 					<h4>Emergency 통계</h4>
 					<div id="emergency"></div>
 				</div>
@@ -111,11 +111,11 @@
 
 	// Emergency통계
 	var chartEmergency = (function () {
-		var chart = new Highcharts.Chart(Highcharts.merge(chartBarOptions, {
+		var chart = new Highcharts.Chart(Highcharts.merge(chartAreaOptions, {
 			chart: {
 				renderTo: 'emergency',
-				width: 1000,
-				height: 300
+				width: 1200,
+				height: 200
 			},
 			title: {
 				text: '',
@@ -123,32 +123,25 @@
 				x: -380,
 				y: 172
 			},
-			colors: ["#07c5c7"],
+			colors: ["#36c398"],
 			xAxis: {
-				categories: ['강남구', '강서구', '구로구', '도봉구', '동작구', '서대문구', '성동구', '양천구', '용산구', '종로구', '중랑구', '강동구', '관악구', '노원구'],
+				categories: ['9/1', '9/2', '9/3', '9/4', '9/5', '9/6', '9/7', '9/8', '9/9', '9/10'],
 				labels: {
 					x: 0,
-					y: 30,
+					y: 15,
 					style: {color: '#9c9b9b'}
 				}
 			},
 			yAxis: {
 				min: 0,
-				max: 250,
+				max: 15,
 				labels: {
 					style: {color: '#9c9b9b'}
 				}
 			},
 			series: [{
-				name: '등록(매핑)',
-				data: [10, 15, 6, 10, 8, 18, 8, 3, 14, 7, 4, 2, 3, 10],
-				color:'#07c5c7'
-				
-			},
-			{
-				name: '수집',
-				data: [150, 200, 100, 50, 20, 10, 150, 200, 170, 20, 15, 5, 25, 45],
-				color:'#f65161'
+				name: '호출',
+				data: [4, 3, 2, 7, 2, 10, 6, 4, 3, 2]
 			}]
 		}));
 	})();

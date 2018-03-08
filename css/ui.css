@@ -6408,12 +6408,13 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .stats-detail .article dl:first-child dt{color:#26c6da;}
 .stats-detail .article dl:nth-child(2) dt{color:#36c398;}
 .stats-detail .article dl:last-child dt{color:#f65161;}
-.stats .chart{margin-left:30px;padding:20px;box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);border-radius:4px;background-color:#fff;}
+.stats .chart{overflow:hidden;margin-left:30px;padding:20px;box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.08);border-radius:4px;background-color:#fff;}
+.stats .chart.no-margin{margin-left:15px;}
 .stats .chart h4{margin-bottom:30px;}
 .stats .highcharts-container{overflow:visible !important;}
 .stats svg{overflow:visible;}
 .stats .tooltip{height:40px;padding:5px;border-radius:5px;}
-.stats .tooltip p{margin-bottom:0;font-size:11px;line-height:12px;}
+.stats .tooltip p{display:block !important;margin-bottom:0;font-size:11px;line-height:12px;}
 .stats .tooltip:after{top:40px;}
 
 @keyframes spin{
