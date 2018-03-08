@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m05030001")</script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="content">
+        <div class="content-inner stats">
+
+            <div class="content-header">
+                <h2>API 요청 통계</h2>
+				<div class="table-header">
+					<div class="form-inline">					
+						<select class="form-control disabled" name="" id="" disabled>
+							<option value="">회사전체</option>
+						</select>
+						<label for="">기간검색</label>
+						<input type="text" class="datepicker form-control disabled" placeholder="2018-09-01" disabled>
+						<span>~</span>
+						<input type="text" class="datepicker form-control disabled" placeholder="2018-09-01" disabled>
+					</div><!--.form-inline-->					
+				</div><!--.table-header-->
+				<div class="floatR">
+					<button type="button" class="btn btn-primary">통계다운로드</button>
+				</div>
+			</div><!--.content-header-->
+			
+			<div class="">
+				그래프
+			</div>
+
+			<div class="table-header justify-content-between">
+				<span class="counter">전체<span>25</span>개</span>
+			</div>
+
+			<div class="table-container non-click">
+				<table id="api-stats"></table>
+			</div><!--.table-header-->
+
+			<div class="footer">
+				<button type="button" class="btn btn-secondary" onclick="goPage('m05030000.html')">목록</button>
+			</div>
+
+        </div><!--.content-inner-->
+    </div><!--.content-->
+</div><!--.wrap-->
+
+<script>
+    function deviceListDraw() {
+        $("#api-stats").jqGrid({
+            //url: '../js/device.json',
+            datatype: "json",
+            width: 100,
+            autowidth: true,
+            shrinkToFit: true,
+            height: 480,
+            loadtext: '로딩중...',
+            //multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+            sortname: 'idx',
+            sortorder: "desc",
+            sortable: true,
+            rowNum: 15,
+            colNames: ["순번", "일자", "API 요청", "호출성공", "호출실패"],
+            colModel: [
+                {name: "", align: "center"},
+				{name: "", align: "center"},
+                {name: "", align: "center"},
+				{name: "", align: "center"},
+				{name: "", align: "center"}
+            ]
+        })
+    }
+
+    deviceListDraw();
+</script>
+</body>
+</html>

@@ -35,12 +35,6 @@ $(function () {
         legend: {
             enabled: false
         },
-        xAxis: {
-            visible: false
-        },
-        yAxis: {
-            visible: false
-        },
         tooltip: {
             shadow: false,
             borderRadius: 7,

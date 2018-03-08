@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m05030000")</script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="content">
+        <div class="content-inner stats">
+
+            <div class="content-header">
+                <h2>API 요청 통계</h2>
+				<div class="table-header">
+					<div class="form-inline">					
+						<select class="form-control" name="" id="">
+							<option value="">회사전체</option>
+						</select>
+						<label for="">기간검색</label>
+						<input type="text" class="datepicker form-control">
+						<span>~</span>
+						<input type="text" class="datepicker form-control">
+						<button type="button" class="btn btn-primary ico-search"><span class="sr-only">검색</span></button>
+					</div><!--.form-inline-->					
+				</div><!--.table-header-->
+				<div class="floatR">
+					<button type="button" class="btn btn-primary">통계다운로드</button>
+				</div>
+			</div><!--.content-header-->
+			
+			<div class="api-stats">
+				<div class="row stats-area">
+					<div class="col-3">
+						<div class="sum">
+							<dl>
+								<dt>API 수</dt>
+								<dd class="value odometer" data-end="20"></dd>
+							</dl>
+						</div>
+					</div>
+					<div class="col-9">
+						<div class="row sum-article">
+							<dl>
+								<dt class="demand">API 요청</dt>
+								<dd class="value odometer" data-end="60"></dd>
+							</dl>
+							<dl>
+								<dt class="success">호출 성공</dt>
+								<dd class="value odometer" data-end="30"></dd>
+							</dl>
+							<dl>
+								<dt class="fail">호출 실패</dt>
+								<dd class="value odometer" data-end="30"></dd>
+							</dl>
+						</div><!--.sum-article-->
+					</div><!--.col-9-->
+				</div><!--.stats-area-->
+				<div class="row stats-detail">
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>지도 API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--col-6-->
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>Map API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--.col-6-->
+				</div><!--.stats-detail-->
+				<div class="row stats-detail">
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>Device API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--col-6-->
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>지도 API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--.col-6-->
+				</div><!--.stats-detail-->
+				<div class="row stats-detail">
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>Map API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--col-6-->
+					<div class="col-6">
+						<div class="row article justify-content-between" onclick="goPage('m05030001.html')">
+							<div class="col-3">
+								<h3>Device API</h3>
+							</div>
+							<div class="col-9">
+								<div class="row">
+									<dl class="col-4">
+										<dt>API 요청</dt>
+										<dd>10</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 성공</dt>
+										<dd>5</dd>
+									</dl>
+									<dl class="col-4">
+										<dt>호출 실패</dt>
+										<dd>2</dd>
+									</dl>
+								</div><!--.row-->
+							</div><!--.col-9-->
+						</div><!--.row-->
+					</div><!--.col-6-->
+				</div><!--.stats-detail-->
+			</div><!--.api-stats-->
+
+        </div><!--.content-inner-->
+    </div><!--.content-->
+</div><!--.wrap-->
+
+</body>
+</html>

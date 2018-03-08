@@ -30,7 +30,16 @@
     ]}}
   ]},
 
-  "m05000000" : { "name":"통계", "url":"#none", "target":"_self", "hidden" : true},
+  "m05000000" : { "name":"통계", "url":"#none", "target":"_self", "sub" : [
+	{"m05010000" : { "name":"지역별트래킹통계", "url":"m05000000.html", "target":"_self", "sub" : [
+	      {"m05010001" : { "name":"시/군/구 통계", "url":"m05000001.html", "target":"_self"}}
+	 ]}},
+	{"m05020000" : { "name":"Emergency통계", "url":"m05020000.html", "target":"_self"}},
+	{"m05030000" : { "name":"API요청통계", "url":"m05030000.html", "target":"_self", "sub" : [
+	      {"m05030001" : { "name":"상세", "url":"m05030001.html", "target":"_self"}}
+	 ]}},
+	 {"m05040000" : { "name":"접속이력조회", "url":"m05040000.html", "target":"_self"}}
+  ]},
 
   "m06000000" : { "name":"관리자", "url":"#none", "target":"_self", "sub" : [
     {"m06010000" : { "name":"역할관리", "url":"m06000000.html", "target":"_self", "sub" : [

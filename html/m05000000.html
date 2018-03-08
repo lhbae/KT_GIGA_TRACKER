@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+	<script src="../js/stats.js"></script>
+    <script>ui.menuSet("m05010000")</script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="content">
+        <div class="content-inner stats">
+
+            <div class="content-header">
+                <h2>지역별 트랙킹 통계</h2>
+				<div class="table-header">
+					<div class="form-inline">
+						<select class="form-control" name="" id="">
+							<option value="">회사전체</option>
+						</select>
+						<select class="form-control disabled" name="" id="" disabled>
+							<option value="">그룹전체</option>
+						</select>
+						<label for="">기간검색</label>
+						<input type="text" class="datepicker form-control">
+						<span>~</span>
+						<input type="text" class="datepicker form-control">
+						<button type="button" class="btn btn-primary ico-search"><span class="sr-only">검색</span></button>
+					</div><!--.form-inline-->
+				</div><!--.table-header-->
+				<div class="floatR">
+					<button type="button" class="btn btn-primary">통계다운로드</button>
+				</div>
+			</div><!--.content-header-->
+
+			<div class="row row-layout">
+				<div class="col-3">
+						<div class="table-container left-table">
+							<table id="area-tracking"></table>
+						</div>
+					</div>
+					<div class="col-9">
+						<div class="row">
+							<div class="chart">
+								<h4>시/도별 데이터 현황</h4>
+								<div id="areaData"></div>
+							</div>
+						</div>
+					</div>
+			</div><!--.row-->
+
+        </div><!--.content-inner-->
+    </div><!--.content-->
+</div><!--.wrap-->
+
+
+<script>
+    function deviceListDraw() {
+        $("#area-tracking").jqGrid({
+            url: '../js/area.json',
+            datatype: "json",
+            width: 100,
+            autowidth: true,
+            shrinkToFit: true,
+            height: 600,
+            loadtext: '로딩중...',
+            //multiselect: true, multiselectWidth: 50, loadComplete: function() {ie11Checkbox();},
+            sortname: 'idx',
+            sortorder: "desc",
+            sortable: true,
+            rowNum: 15,
+            colNames: ["지역명", "등록(매핑)", "수집"],
+            colModel: [
+                {
+                    name: "area", align: "center", formatter: function (val) {
+						return '<a href="m05000001.html">' + val + '</a>'
+					}
+                },
+                {name: "", align: "center"},
+				{name: "", align: "center"}
+            ]
+        })
+    }
+
+    deviceListDraw();
+
+</script>
+
+</body>
+</html>
