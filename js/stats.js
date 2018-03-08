@@ -1,6 +1,4 @@
-$(function () {
-
-	// 컬럼(세로막대)차트 공통
+// 컬럼(세로막대)차트 공통
 	var chartBarOptions = {
 		chart: {
 			type: 'column',
@@ -160,4 +158,3 @@ $(function () {
 			}]
 		}));
 	})();
-});
