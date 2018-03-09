@@ -97,11 +97,12 @@ var chartAreaOptions = {
 		layout: 'horizontal'
 	},
 	tooltip: {
+		useHTML: true,
 		shadow: false,
 		borderRadius: 7,
 		padding: 6,
 		formatter: function () {
-			return '<div class="tooltip" style="background-color:' + this.color + ';border-color:' + this.color + '"><p>'+ this.x + '</p>' + this.series.name + ' : <span style="font-weight:bold">' + this.y + '</span></div>';
+			return '<div class="tooltip areaTip"><p>'+ this.x + '</p>' + this.series.name + ' : <span style="font-weight:bold">' + this.y + '</span></div>';
 		}
 	},
 	yAxis: {

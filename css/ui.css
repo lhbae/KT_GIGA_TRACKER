@@ -6377,12 +6377,14 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .tracking-area.today{background-image:url(../img/tracker_bg_today.png);}
 
 .stats .datepicker{width:130px !important;}
-.no-flexboxlegacy .stats .table-header input.datepicker{-ms-flex-preferred-size:130px;flex-basis:130px;}
+.stats .table-header{min-height:auto;}
+.no-flexboxlegacy .stats .table-header input.datepicker{-ms-flex-preferred-size:100px;flex-basis:100px;}
 .left-table .ui-jqgrid .ui-jqgrid-htable th{height:40px;}
 .left-table .ui-jqgrid tr.jqgrow td{height:36px;}
 .left-table .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after{height:36px;}
+.left-table .ui-widget-content.ui-state-highlight::after{content:"";display:block;position:absolute;left:0;right:0;height:36px;border:solid 1px #2bb7b3;box-shadow:0 2px 7px 0 rgba(0,0,0,0.2);}
 .non-click .ui-jqgrid tr.jqgrow,.non-click .ui-jqgrid tr.jqgrow{cursor:default;}
-.non-click .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after{display:none;}
+.non-click .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after,.left-table .ui-widget-content.ui-state-highlight::after{display:none;}
 .non-click .ui-jqgrid [aria-selected=true] td{font-weight:normal !important;}
 
 .stats-area{margin-bottom:30px;padding:20px;background-color:#efefef;}
@@ -6416,6 +6418,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .stats .tooltip{height:40px;padding:5px;border-radius:5px;}
 .stats .tooltip p{display:block !important;margin-bottom:0;font-size:11px;line-height:12px;}
 .stats .tooltip:after{top:40px;}
+.stats .tooltip.areaTip{height:auto;color:inherit;margin:0;padding:0;}
+.stats .tooltip.areaTip:after{display:none;}
 
 @keyframes spin{
    0%{transform:rotate(0deg);}
