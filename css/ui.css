@@ -6382,9 +6382,9 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .left-table .ui-jqgrid .ui-jqgrid-htable th{height:40px;}
 .left-table .ui-jqgrid tr.jqgrow td{height:36px;}
 .left-table .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after{height:36px;}
-.left-table tr.ui-widget-content.ui-state-highlight::after{content:"";display:block;position:absolute;left:0;right:0;height:36px;border:solid 1px #2bb7b3;box-shadow:0 2px 7px 0 rgba(0,0,0,0.2);}
+.left-table .ui-widget-content.ui-state-highlight::after{content:"";display:block;position:absolute;left:0;right:0;height:36px;border:solid 1px #2bb7b3;box-shadow:0 2px 7px 0 rgba(0,0,0,0.2);}
 .non-click .ui-jqgrid tr.jqgrow,.non-click .ui-jqgrid tr.jqgrow{cursor:default;}
-.non-click .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after,.left-table .ui-widget-content.ui-state-highlight::after{display:none;}
+.non-click .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after,.non-click .ui-widget-content.ui-state-highlight::after{display:none;}
 .non-click .ui-jqgrid [aria-selected=true] td{font-weight:normal !important;}
 
 .stats-area{margin-bottom:30px;padding:20px;background-color:#efefef;}
