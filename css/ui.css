@@ -6386,6 +6386,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .non-click .ui-jqgrid tr.jqgrow,.non-click .ui-jqgrid tr.jqgrow{cursor:default;}
 .non-click .ui-jqgrid .ui-jqgrid-bdiv .ui-state-hover::after,.non-click .ui-widget-content.ui-state-highlight::after{display:none;}
 .non-click .ui-jqgrid [aria-selected=true] td{font-weight:normal !important;}
+#area-tracking table tr [id=1] td{font-weight:normal;}
+#area-tracking table tr [id=1]::after{display:none;}
 
 .stats-area{margin-bottom:30px;padding:20px;background-color:#efefef;}
 .stats-area .sum{padding:20px;}

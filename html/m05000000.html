@@ -84,7 +84,11 @@
             colModel: [
                 {
                     name: "area", align: "center", formatter: function (val) {
-						return '<a href="m05000001.html">' + val + '</a>'
+						if(val === "전국"){
+							return '<a>' + val + '</a>'
+						}else{
+						    return '<a href="m05000001.html">' + val + '</a>'
+						}
 					}
                 },
                 {name: "", align: "center"},
