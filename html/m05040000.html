@@ -68,13 +68,23 @@
 				<table id="access-history"></table>
 			</div><!--.table-header-->
 
+			<ul class="pagination">
+                <li class="page-item disabled ico-first"><a class="page-link" href="#"><span class="sr-only">맨처음</span></a></li>
+                <li class="page-item ico-prev"><a class="page-link" href="#"><span class="sr-only">이전</span></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item ico-next"><a class="page-link" href="#"><span class="sr-only">다음</span></a></li>
+                <li class="page-item ico-last"><a class="page-link" href="#"><span class="sr-only">맨끝</span></a></li>
+            </ul>
+
         </div><!--.content-inner-->
     </div><!--.content-->
 </div><!--.wrap-->
 
 
 <script>
-    function deviceListDraw() {
+    function accessHistory() {
         $("#access-history").jqGrid({
             //url: '../js/device.json',
             datatype: "json",
@@ -103,7 +113,7 @@
         })
     }
 
-    deviceListDraw();
+    accessHistory();
 </script>
 </body>
 </html>

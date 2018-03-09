@@ -64,7 +64,7 @@
 </div><!--.wrap-->
 
 <script>
-    function deviceListDraw() {
+    function apiStats() {
         $("#api-stats").jqGrid({
             //url: '../js/device.json',
             datatype: "json",
@@ -90,7 +90,7 @@
         })
     }
 
-    deviceListDraw();
+    apiStats();
 	
 	// API 요청 통계 상세
 	var chartApiStats = (function () {
