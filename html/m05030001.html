@@ -68,7 +68,7 @@
         $("#api-stats").jqGrid({
             //url: '../js/device.json',
             datatype: "json",
-            width: 100,
+            //width: 100,
             autowidth: true,
             shrinkToFit: true,
             height: 480,
@@ -77,7 +77,8 @@
             sortname: 'idx',
             sortorder: "desc",
             sortable: true,
-            rowNum: 15,
+            rowNum: 10,
+			resizable: false,
             colNames: ["순번", "일자", "API 요청", "호출성공", "호출실패"],
             colModel: [
                 {name: "", align: "center"},
