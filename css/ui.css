@@ -6424,6 +6424,11 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .stats .tooltip.areaTip{height:auto;color:inherit;margin:0;padding:0;}
 .stats .tooltip.areaTip:after{display:none;}
 
+.form-layout .function-setup *{vertical-align:middle;}
+.form-layout .function-setup .form-control{width:80px;}
+.form-layout .function-setup .checkbox-list{margin-right:20px;}
+.form-layout .function-setup .checkbox-list label{-ms-flex:0 0 40px;flex:0 0 40px;}
+
 @keyframes spin{
    0%{transform:rotate(0deg);}
     100%{transform:rotate(360deg);}

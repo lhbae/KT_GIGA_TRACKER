@@ -92,6 +92,11 @@
       {"m06090001" : { "name":"상세", "url":"m06090001.html", "target":"_self"}},
       {"m06090002" : { "name":"수정", "url":"m06090002.html", "target":"_self"}},
       {"m06090003" : { "name":"등록", "url":"m06090003.html", "target":"_self"}}
+    ]}},
+    {"m06100000" : { "name":"단말기능관리", "url":"m06100000.html", "target":"_self", "sub" : [
+      {"m06100001" : { "name":"상세", "url":"m06100001.html", "target":"_self"}},
+      {"m06100002" : { "name":"수정", "url":"m06100002.html", "target":"_self"}},
+      {"m06100003" : { "name":"등록", "url":"m06100003.html", "target":"_self"}}
     ]}}
   ]},
 

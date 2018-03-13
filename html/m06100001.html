@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KT GiGA IoT Tracking service</title>
+    <link rel="stylesheet" href="../css/ui.css">
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/vendor/jquery-ui.js"></script>
+    <script src="../js/vendor/highcharts.js"></script>
+    <script src="../js/vendor/jquery.jqGrid.min.js"></script>
+    <script src="../js/vendor/grid.locale-kr.js"></script>
+    <script src="../js/vendor.js"></script>
+    <script src="../js/ui.js"></script>
+    <script src="../js/common.js"></script>
+    <script>ui.menuSet("m06100001")</script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="content">
+        <div class="content-inner">
+
+            <div class="content-header">
+                <h2>단말기능관리</h2>
+            </div>
+
+            <div class="form form-layout">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="" class="required">기능명</label>
+                        <input type="search" class="form-control" value="온도" required disabled>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">기능코드</label>
+                        <input type="search" class="form-control" value="TEM_CYCL" required disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="" class="required">기능단위</label>
+                        <input type="search" class="form-control" value="도(℃)" required disabled>
+                    </div>
+                </div>
+                <div class="row function-setup">
+					<div class="col-11 form-inline align-self-start">
+						<label for="" class="required">설정값</label>
+						<div class="checkbox-list form-inline">
+							<input type="radio" id="single" name="radio" checked  disabled><label for="single">단일</label>							
+						</div>
+						<div class="checkbox-list form-inline">
+							<input type="radio" id="section" name="radio" disabled><label for="section">구간</label>
+						</div>
+						<div class="setup-single">
+							<input type="search" class="form-control" value="30" required disabled>
+							<select name="" id="" class="form-control disabled" disabled>
+								<option value="이상">이상</option>
+								<option value="">이하</option>
+							</select>
+						</div>
+					</div>
+				</div><!--.function-setup-->
+            </div>
+            <div class="footer">
+                <button onclick="goPage('m06100000.html')" type="button" class="btn btn-secondary">취소</button>
+                <button onclick="goPage('m06100000.html')" type="button" class="btn btn-secondary active">삭제</button>
+                <button onclick="goPage('m06100002.html')" type="button" class="btn btn-primary">수정</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

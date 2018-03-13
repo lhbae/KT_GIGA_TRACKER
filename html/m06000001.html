@@ -13,7 +13,7 @@
     <script src="../js/vendor.js"></script>
     <script src="../js/ui.js"></script>
     <script src="../js/common.js"></script>
-    <script>ui.menuSet("m06010001")</script>
+    <script>ui.menuSet("m06090001")</script>
 </head>
 <body>
 
@@ -25,29 +25,114 @@
                 <h2>관리자</h2>
             </div>
 
-            <div class="form-layout form">
+            <div class="form form-layout">
                 <div class="row">
-                    <label for="" class="required">역할명</label>
-                    <input type="search" class="form-control" required>
+                    <div class="col-6">
+                        <label for="" class="required">소속운영사명</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">소속운영사ID</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
                 </div>
                 <div class="row">
-                    <label for="" class="required">역할ID</label>
-                    <input type="search" class="form-control" required disabled>
+                    <div class="col-6">
+                        <label for="" class="required">회사명</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">회사ID</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
                 </div>
                 <div class="row">
-                    <label for="" class="">역할구분</label>
-                    <input type="search" class="form-control">
+                    <div class="col-6">
+                        <label for="" class="required">그룹명</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">그룹코드</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
                 </div>
                 <div class="row">
-                    <label for="" class="">설명</label>
-                    <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
+                    <div class="col-6">
+                        <label for="" class="required">사용자명</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">사용자ID</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="" class="required">역할명</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">역할ID</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 rowBlock">
+						<div class="row">
+							<label for="" class="required">모바일번호</label>
+							<input type="search" class="form-control" required>
+						</div>
+						<div class="row form-inline">
+							<label for="" class="required">이메일</label>
+							<div class="form-email ml-0">
+								<input type="search" class="form-control" required>
+								<span>@</span>
+								<input type="search" class="form-control" required>
+							</div>
+						</div>
+						<div class="row form-inline">
+							<label for="" class="required">사용일</label>
+							<div class="form-date ml-0">
+								<input type="search" class="form-control" required>
+								<span>~</span>
+								<input type="search" class="form-control" required>
+							</div>
+						</div>
+					</div><!--.col-6-->
+					<div class="col-6 rowBlock">
+						<div class="row">
+							<div class="col">
+								<label for="" class="mt-3">알림수신</label>
+								<div class="checkbox-list">
+									<input type="checkbox" id="" name="checkbox-sensor" checked><label for="">SMS</label><br>
+									<input type="checkbox" id="" name="checkbox-sensor"><label for="">PUSH</label><br>
+									<input type="checkbox" id="" name="checkbox-sensor"><label for="">Email</label><br>
+								</div>
+							</div>
+						</div><!--.row-->
+					</div><!--.col-6-->
+				</div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="" class="required">ID상태</label>
+                        <input type="search" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label for="" class="required">등록일시</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="required">최종수정일시</label>
+                        <input type="search" class="form-control" required disabled>
+                    </div>
                 </div>
             </div>
-
             <div class="footer">
-                <button onclick="goPage('m06000000.html')" class="btn btn-secondary">취소</button>
-                <button onclick="goPage('m06000000.html')" class="btn btn-secondary active">삭제</button>
-                <button onclick="goPage('m06000002.html')" class="btn btn-primary">수정</button>
+                <button onclick="goPage('m06090000.html')" type="button" class="btn btn-secondary">취소</button>
+                <button onclick="goPage('m06090000.html')" type="button" class="btn btn-secondary active">삭제</button>
+                <button onclick="goPage('m06090002.html')" type="button" class="btn btn-primary">수정</button>
             </div>
 
         </div>
