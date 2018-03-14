@@ -6429,6 +6429,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .form-layout .function-setup .checkbox-list{margin-right:20px;}
 .form-layout .function-setup .checkbox-list label{-ms-flex:0 0 40px;flex:0 0 40px;}
 
+.form-inline .input-group{z-index:0;}
+
 @keyframes spin{
    0%{transform:rotate(0deg);}
     100%{transform:rotate(360deg);}
