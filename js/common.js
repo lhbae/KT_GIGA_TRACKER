@@ -458,6 +458,42 @@ function checkPopup(id) {
         }
     };
 
+	var legend = {
+        title: '대상/단말기 상태 설명',
+        width: '350',
+        open: function () {
+            $(this).html('<div class="form text-left legend-list">' +
+                '<p>대상 상태 아이콘</p>' +
+                '<ul class="item">' +
+                '<li data-value="0">데이터미수신</li>' +
+                '<li data-value="1">정상수신</li>' +
+				'<li data-value="2">OFF</li>' +
+				'<li data-value="5">이벤트발생</li>' +
+				'</ul>' +
+				'</div>' +
+				'<div class="form text-left legend-list">' +
+                '<p>단말기 상태 아이콘</p>' +
+				'<ul class="item">' +
+                '<li data-value="0">데이터미수신</li>' +
+                '<li data-value="1">정상수신</li>' +
+				'<li data-value="2">OFF</li>' +
+				'<li data-value="3">배터리이벤트</li>' +
+				'<li data-value="7">지오펜스진입</li>' +
+				'<li data-value="8">지오펜스진출</li>' +
+				'</ul>' +
+                '</div>');
+        },
+        buttons: {
+            '닫기': {
+                'class': 'btn btn-secondary',
+                'text': '닫기',
+                click: function () {
+                    $(this).dialog("close");
+                }
+            }
+        }
+    };
+
     var password = {
         title: '비밀번호 확인',
         width: '500',

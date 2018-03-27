@@ -5908,23 +5908,23 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 #monitoring-list .item [data-value] { background: 0 48% no-repeat; }
 
-#monitoring-list .item [data-value="0"] { background-image: url(../img/ico_check_data.png); }
+#monitoring-list .item [data-value="0"],.legend-list .item [data-value="0"]{ background-image: url(../img/ico_check_data.png); }
 
-#monitoring-list .item [data-value="1"] { background-image: url(../img/ico_check_true.png); }
+#monitoring-list .item [data-value="1"],.legend-list .item [data-value="1"]{ background-image: url(../img/ico_check_true.png); }
 
-#monitoring-list .item [data-value="2"] { background-image: url(../img/ico_check_off.png); }
+#monitoring-list .item [data-value="2"],.legend-list .item [data-value="2"] { background-image: url(../img/ico_check_off.png); }
 
-#monitoring-list .item [data-value="3"] { background-image: url(../img/ico_check_bttry.png); }
+#monitoring-list .item [data-value="3"],.legend-list .item [data-value="3"]{ background-image: url(../img/ico_check_bttry.png); }
 
-#monitoring-list .item [data-value="4"] { background-image: url(../img/ico_check_geo.png); }
+#monitoring-list .item [data-value="4"],.legend-list .item [data-value="4"]{ background-image: url(../img/ico_check_geo.png); }
 
-#monitoring-list .item [data-value="5"] { background-image: url(../img/ico_check_evt.png); }
+#monitoring-list .item [data-value="5"],.legend-list .item [data-value="5"]{ background-image: url(../img/ico_check_evt.png); }
 
-#monitoring-list .item [data-value="6"] { background-image: url(../img/ico_check_today.png); }
+#monitoring-list .item [data-value="6"],.legend-list .item [data-value="6"]{ background-image: url(../img/ico_check_today.png); }
 
-#monitoring-list .item [data-value="7"] { background-image: url(../img/ico_check_geo_in.png); }
+#monitoring-list .item [data-value="7"],.legend-list .item [data-value="7"]{ background-image: url(../img/ico_check_geo_in.png); }
 
-#monitoring-list .item [data-value="8"] { background-image: url(../img/ico_check_geo_out.png); }
+#monitoring-list .item [data-value="8"],.legend-list .item [data-value="8"]{ background-image: url(../img/ico_check_geo_out.png); }
 
 #monitoring-list .item .device-battery { background: 0 50% no-repeat; padding-left: 30px; margin-left: 10px; font-size: 1.2rem; }
 
@@ -6430,6 +6430,15 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 .form-layout .function-setup .checkbox-list label{-ms-flex:0 0 40px;flex:0 0 40px;}
 
 .form-inline .input-group{z-index:0;}
+
+.map-btn-area .btn-legend{width:72px;height:72px;margin-top:20px;padding:26px 0 0 0;font-size:12px;line-height:14px;background:#fff url(../img/if_help-questionmark_430101_dark.png) center 10px no-repeat;}
+.map-btn-area .btn-legend:hover{color:inherit;}
+.legend-list{margin-bottom:15px;border: 1px solid #ddd;border-radius:7px;}
+.legend-list p{margin-bottom:0;margin-top:10px;padding:5px 0;}
+.legend-list .item{overflow:hidden;margin-bottom:0;padding:10px;}
+.legend-list ul,.legend-list li{list-style:none;}
+.legend-list li{float:left;width:50%; padding-left:20px;background-repeat:no-repeat;}
+.legend-list li{margin:4px 0;}
 
 @keyframes spin{
    0%{transform:rotate(0deg);}
