@@ -6431,7 +6431,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .form-inline .input-group{z-index:0;}
 
-.map-btn-area .btn-legend{display:block;width:72px;height:72px;margin-top:10px;padding:24px 0 0 0;line-height:16px;background:#fff url(../img/if_help-questionmark_430101_dark.png) center 8px no-repeat;}
+.map-btn-area .btn-legend{display:block;width:72px;height:72px;margin-top:10px;padding:20px 0 0 0;line-height:18px;background:#fff url(../img/if_help-questionmark_430101_dark.png) center 6px no-repeat;}
 .map-btn-area .btn-legend:hover{color:inherit;}
 .legend-list{margin-bottom:15px;border: 1px solid #ddd;border-radius:7px;}
 .legend-list p{margin-bottom:0;margin-top:10px;padding:5px 0;}
