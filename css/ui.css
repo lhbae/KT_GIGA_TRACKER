@@ -6040,7 +6040,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .map-btn-area .btn-refresh:hover { color: inherit; }
 
-.map-btn-area .map-type { margin-top: 10px; }
+.map-btn-area .map-type { margin-bottom: 10px; }
 
 .map-btn-area .map-type .btn { height: 36px; width: 72px; display: block; }
 
@@ -6431,7 +6431,7 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .form-inline .input-group{z-index:0;}
 
-.map-btn-area .btn-legend{width:72px;height:72px;margin-top:10px;padding:26px 0 0 0;font-size:12px;line-height:14px;background:#fff url(../img/if_help-questionmark_430101_dark.png) center 10px no-repeat;}
+.map-btn-area .btn-legend{display:block;width:72px;height:72px;margin-top:10px;padding:26px 0 0 0;font-size:12px;line-height:14px;background:#fff url(../img/if_help-questionmark_430101_dark.png) center 10px no-repeat;}
 .map-btn-area .btn-legend:hover{color:inherit;}
 .legend-list{margin-bottom:15px;border: 1px solid #ddd;border-radius:7px;}
 .legend-list p{margin-bottom:0;margin-top:10px;padding:5px 0;}
