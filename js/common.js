@@ -467,6 +467,7 @@ function checkPopup(id) {
                 '<ul class="item">' +
                 '<li data-value="0">데이터미수신</li>' +
                 '<li data-value="1">정상수신</li>' +
+				'<li data-value="6">금일수신데이터</li>' +
 				'<li data-value="2">OFF</li>' +
 				'<li data-value="5">이벤트발생</li>' +
 				'</ul>' +
@@ -476,6 +477,7 @@ function checkPopup(id) {
 				'<ul class="item">' +
                 '<li data-value="0">데이터미수신</li>' +
                 '<li data-value="1">정상수신</li>' +
+				'<li data-value="6">금일수신데이터</li>' +
 				'<li data-value="2">OFF</li>' +
 				'<li data-value="3">배터리이벤트</li>' +
 				'<li data-value="7">지오펜스진입</li>' +
