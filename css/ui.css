@@ -6224,6 +6224,8 @@ body { background-color: #efefef; padding: 52px 0 0 200px; font-size: 1.3rem; li
 
 .login-form .btn-link { position: absolute; text-align: center; display: block; bottom: 34px; border: 0; left: 0; right: 0; }
 
+.login-form .btn-link:last-child{bottom:0};
+
 .ico-valid { background: url(../img/form_check.png) 100% 50% no-repeat !important; }
 
 .no-flexbox { /*대상관리 > 대상유형관리*/ /*매핑가능단말선택팝업*/ }
