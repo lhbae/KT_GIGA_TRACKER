@@ -606,6 +606,20 @@ function clauses() {
     });
 }
 
+// 개인정보처리방침팝업
+function private() {
+    $.ajax({
+        url: '../html/private.html',
+        dataType: 'html',
+        cache: false
+    }).done(function (data) {
+        if ($('#private').length) return;
+        $('body').append(data);
+    }).complete(function () {
+        privateOpen();
+    });
+}
+
 // 모니터링 마커 상세
 function marker() {
     $.ajax({
